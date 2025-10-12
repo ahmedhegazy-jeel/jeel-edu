@@ -1,0 +1,33 @@
+package com.jeeleducation.lms.dto;
+
+import com.jeeleducation.lms.entity.Status;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+
+/**
+ * Data Transfer Object for Unit entity.
+ */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class UnitDTO {
+
+    private Long id;
+    private String name;
+    private String description;
+    private String audioName;
+    private String icon;
+    private Status status;
+    private Integer displayOrder;
+    private Long curriculumId;
+    private String curriculumName;
+    private Integer lessonCount;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+}
+
