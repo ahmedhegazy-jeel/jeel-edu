@@ -68,12 +68,12 @@ class CurriculumServiceTest {
 
         UpdateCurriculumRequest updateRequest = UpdateCurriculumRequest.builder()
                 .name("Updated Name")
-                .status(Status.PUBLISHED)
+                .status(Status.ACTIVE)
                 .build();
         CurriculumDTO updated = curriculumService.updateCurriculum(created.getId(), updateRequest);
 
         assertEquals("Updated Name", updated.getName());
-        assertEquals(Status.PUBLISHED, updated.getStatus());
+        assertEquals(Status.ACTIVE, updated.getStatus());
     }
 
     @Test
@@ -86,12 +86,12 @@ class CurriculumServiceTest {
 
         CreateCurriculumRequest publishedRequest = CreateCurriculumRequest.builder()
                 .name("Published Curriculum")
-                .status(Status.PUBLISHED)
+                .status(Status.ACTIVE)
                 .build();
         curriculumService.createCurriculum(publishedRequest);
 
         List<CurriculumDTO> draftCurriculums = curriculumService.getCurriculumsByStatus(Status.DRAFT);
-        List<CurriculumDTO> publishedCurriculums = curriculumService.getCurriculumsByStatus(Status.PUBLISHED);
+        List<CurriculumDTO> publishedCurriculums = curriculumService.getCurriculumsByStatus(Status.ACTIVE);
 
         assertNotNull(draftCurriculums);
         assertNotNull(publishedCurriculums);

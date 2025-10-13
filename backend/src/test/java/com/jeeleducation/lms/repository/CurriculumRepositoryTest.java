@@ -34,13 +34,13 @@ class CurriculumRepositoryTest {
 
         Curriculum published = Curriculum.builder()
                 .name("Published Curriculum")
-                .status(Status.PUBLISHED)
+                .status(Status.ACTIVE)
                 .build();
         entityManager.persist(published);
         entityManager.flush();
 
         List<Curriculum> draftList = curriculumRepository.findByStatus(Status.DRAFT);
-        List<Curriculum> publishedList = curriculumRepository.findByStatus(Status.PUBLISHED);
+        List<Curriculum> publishedList = curriculumRepository.findByStatus(Status.ACTIVE);
 
         assertTrue(draftList.stream().anyMatch(c -> c.getName().equals("Draft Curriculum")));
         assertTrue(publishedList.stream().anyMatch(c -> c.getName().equals("Published Curriculum")));
@@ -50,7 +50,7 @@ class CurriculumRepositoryTest {
     void testSearchByName() {
         Curriculum curriculum = Curriculum.builder()
                 .name("Arabic Language Curriculum")
-                .status(Status.PUBLISHED)
+                .status(Status.ACTIVE)
                 .build();
         entityManager.persist(curriculum);
         entityManager.flush();

@@ -6,7 +6,7 @@ package com.jeeleducation.lms.entity;
  */
 public enum Status {
     DRAFT("Draft", "Under development"),
-    PUBLISHED("Published", "Available to students"),
+    ACTIVE("ACTIVE", "Available to students"),
     ARCHIVED("Archived", "No longer active");
 
     private final String displayName;

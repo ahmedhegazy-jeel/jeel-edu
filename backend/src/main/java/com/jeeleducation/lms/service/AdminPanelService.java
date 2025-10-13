@@ -83,7 +83,7 @@ public class AdminPanelService {
 
         // Curriculum statistics
         long totalCurriculums = curriculumRepository.count();
-        long publishedCurriculums = curriculumRepository.countByStatus(Status.PUBLISHED);
+        long publishedCurriculums = curriculumRepository.countByStatus(Status.ACTIVE);
         long draftCurriculums = curriculumRepository.countByStatus(Status.DRAFT);
         long totalUnits = unitRepository.count();
         long totalLessons = lessonRepository.count();
