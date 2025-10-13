@@ -73,9 +73,9 @@
 
 6- [x] School management , with fields like {name , icon , adminMobile , adminEmail, adminPassword }
     a- [x] Create the entities and DTOs and Controller with the endpoints and service and repository  for school .
-7- [] Implement progress tracking APIs
-8- [] Build admin panel
-9- [] Write automated tests for APIs
+7- [x] Implement progress tracking APIs
+8- [x] Build admin panel
+9- [x] Write automated tests for APIs
 
 ---
 
