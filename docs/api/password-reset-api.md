@@ -2,7 +2,7 @@
 
 ## Base URL
 ```
-http://localhost:8080/api/auth
+http://localhost:8080/auth
 ```
 
 ## Overview
@@ -283,7 +283,7 @@ Implement rate limiting on password reset requests to prevent abuse:
 
 ### 1. Request Password Reset
 ```bash
-curl -X POST http://localhost:8080/api/auth/password-reset/request \
+curl -X POST http://localhost:8080/auth/password-reset/request \
   -H "Content-Type: application/json" \
   -d '{
     "email": "user@example.com"
@@ -292,12 +292,12 @@ curl -X POST http://localhost:8080/api/auth/password-reset/request \
 
 ### 2. Validate Token
 ```bash
-curl -X GET "http://localhost:8080/api/auth/password-reset/validate?token=YOUR_TOKEN"
+curl -X GET "http://localhost:8080/auth/password-reset/validate?token=YOUR_TOKEN"
 ```
 
 ### 3. Confirm Password Reset
 ```bash
-curl -X POST http://localhost:8080/api/auth/password-reset/confirm \
+curl -X POST http://localhost:8080/auth/password-reset/confirm \
   -H "Content-Type: application/json" \
   -d '{
     "token": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
@@ -307,7 +307,7 @@ curl -X POST http://localhost:8080/api/auth/password-reset/confirm \
 
 ### 4. Change Password (Authenticated)
 ```bash
-curl -X POST http://localhost:8080/api/auth/password-change \
+curl -X POST http://localhost:8080/auth/password-change \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
   -d '{
@@ -325,7 +325,7 @@ curl -X POST http://localhost:8080/api/auth/password-change \
 #### Step 1: Request Reset
 ```javascript
 async function requestPasswordReset(email) {
-  const response = await fetch('http://localhost:8080/api/auth/password-reset/request', {
+  const response = await fetch('http://localhost:8080/auth/password-reset/request', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -342,7 +342,7 @@ async function requestPasswordReset(email) {
 ```javascript
 async function validateToken(token) {
   const response = await fetch(
-    `http://localhost:8080/api/auth/password-reset/validate?token=${token}`
+    `http://localhost:8080/auth/password-reset/validate?token=${token}`
   );
 
   if (response.ok) {
@@ -357,7 +357,7 @@ async function validateToken(token) {
 #### Step 3: Confirm Reset
 ```javascript
 async function confirmPasswordReset(token, newPassword) {
-  const response = await fetch('http://localhost:8080/api/auth/password-reset/confirm', {
+  const response = await fetch('http://localhost:8080/auth/password-reset/confirm', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

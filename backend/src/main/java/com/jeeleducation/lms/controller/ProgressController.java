@@ -26,7 +26,7 @@ import java.util.Map;
  * REST controller for progress tracking operations.
  */
 @RestController
-@RequestMapping("/api/progress")
+@RequestMapping("/progress")
 public class ProgressController {
 
     @Autowired

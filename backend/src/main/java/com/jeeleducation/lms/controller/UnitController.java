@@ -26,7 +26,7 @@ import java.util.List;
  * REST controller for unit management operations.
  */
 @RestController
-@RequestMapping("/api/units")
+@RequestMapping("/units")
 public class UnitController {
 
     @Autowired

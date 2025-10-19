@@ -120,8 +120,8 @@ public PasswordEncoder passwordEncoder() {
 .requestMatchers("/public/**").permitAll()
 
 // Role-based endpoints
-.requestMatchers("/api/admin/**").hasAnyRole("SUPER_ADMIN", "SCHOOL_ADMIN")
-.requestMatchers("/api/super-admin/**").hasRole("SUPER_ADMIN")
+.requestMatchers("/admin/**").hasAnyRole("SUPER_ADMIN", "SCHOOL_ADMIN")
+.requestMatchers("/super-admin/**").hasRole("SUPER_ADMIN")
 // ... etc
 
 // All other endpoints require authentication
@@ -257,7 +257,7 @@ VALUES ('testuser', 'test@example.com', '$2a$10$YourBCryptHashHere', 'Test', 'Us
 
 ### 2. Test Login
 ```bash
-curl -X POST http://localhost:8080/api/auth/login \
+curl -X POST http://localhost:8080/auth/login \
   -H "Content-Type: application/json" \
   -d '{
     "usernameOrEmail": "testuser",
@@ -267,13 +267,13 @@ curl -X POST http://localhost:8080/api/auth/login \
 
 ### 3. Test Protected Endpoint
 ```bash
-curl -X GET http://localhost:8080/api/users/me \
+curl -X GET http://localhost:8080/users/me \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
 ### 4. Test Token Refresh
 ```bash
-curl -X POST http://localhost:8080/api/auth/refresh \
+curl -X POST http://localhost:8080/auth/refresh \
   -H "Content-Type: application/json" \
   -d '{
     "refreshToken": "YOUR_REFRESH_TOKEN"

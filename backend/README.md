@@ -124,126 +124,126 @@ backend/
 - ✅ `POST /auth/password-change` - Change password (authenticated)
 
 ### User Profile (2 endpoints)
-- ✅ `GET /api/users/me` - Get current user profile
-- ✅ `PUT /api/users/me` - Update current user profile
+- ✅ `GET /users/me` - Get current user profile
+- ✅ `PUT /users/me` - Update current user profile
 
 ### User Management - Admin (12 endpoints)
-- ✅ `GET /api/users` - Get all users
-- ✅ `GET /api/users/{id}` - Get user by ID
-- ✅ `GET /api/users/search` - Search users
-- ✅ `GET /api/users/role/{role}` - Get users by role
-- ✅ `GET /api/users/stats` - Get user statistics
-- ✅ `POST /api/users` - Create user
-- ✅ `PUT /api/users/{id}` - Update user
-- ✅ `PATCH /api/users/{id}/activate` - Activate user
-- ✅ `PATCH /api/users/{id}/deactivate` - Deactivate user
-- ✅ `PATCH /api/users/{id}/lock` - Lock user account
-- ✅ `PATCH /api/users/{id}/unlock` - Unlock user account
-- ✅ `DELETE /api/users/{id}` - Delete user (SUPER_ADMIN only)
+- ✅ `GET /users` - Get all users
+- ✅ `GET /users/{id}` - Get user by ID
+- ✅ `GET /users/search` - Search users
+- ✅ `GET /users/role/{role}` - Get users by role
+- ✅ `GET /users/stats` - Get user statistics
+- ✅ `POST /users` - Create user
+- ✅ `PUT /users/{id}` - Update user
+- ✅ `PATCH /users/{id}/activate` - Activate user
+- ✅ `PATCH /users/{id}/deactivate` - Deactivate user
+- ✅ `PATCH /users/{id}/lock` - Lock user account
+- ✅ `PATCH /users/{id}/unlock` - Unlock user account
+- ✅ `DELETE /users/{id}` - Delete user (SUPER_ADMIN only)
 
 ### Admin Dashboard (4 endpoints)
-- ✅ `GET /api/admin/dashboard` - Admin dashboard
-- ✅ `GET /api/admin/teachers` - Get all teachers
-- ✅ `GET /api/admin/students` - Get all students
-- ✅ `GET /api/admin/parents` - Get all parents
+- ✅ `GET /admin/dashboard` - Admin dashboard
+- ✅ `GET /admin/teachers` - Get all teachers
+- ✅ `GET /admin/students` - Get all students
+- ✅ `GET /admin/parents` - Get all parents
 
 ### Teacher Endpoints (2 endpoints)
-- ✅ `GET /api/teacher/dashboard` - Teacher dashboard
-- ✅ `GET /api/teacher/students` - View students
+- ✅ `GET /teacher/dashboard` - Teacher dashboard
+- ✅ `GET /teacher/students` - View students
 
 ### Parent Endpoints (2 endpoints)
-- ✅ `GET /api/parent/dashboard` - Parent dashboard
-- ✅ `GET /api/parent/children/progress` - Children progress
+- ✅ `GET /parent/dashboard` - Parent dashboard
+- ✅ `GET /parent/children/progress` - Children progress
 
 ### Student Endpoints (3 endpoints)
-- ✅ `GET /api/student/dashboard` - Student dashboard
-- ✅ `GET /api/student/curriculums` - View curriculums
-- ✅ `GET /api/student/progress` - View progress
+- ✅ `GET /student/dashboard` - Student dashboard
+- ✅ `GET /student/curriculums` - View curriculums
+- ✅ `GET /student/progress` - View progress
 
 ### Curriculum Management (37 endpoints)
 
 **Curriculum (7 endpoints):**
-- ✅ `POST /api/curriculums` - Create curriculum
-- ✅ `GET /api/curriculums` - Get all curriculums
-- ✅ `GET /api/curriculums/{id}` - Get curriculum by ID
-- ✅ `GET /api/curriculums/status/{status}` - Get by status
-- ✅ `GET /api/curriculums/search` - Search curriculums
-- ✅ `PUT /api/curriculums/{id}` - Update curriculum
-- ✅ `DELETE /api/curriculums/{id}` - Delete curriculum
+- ✅ `POST /curriculums` - Create curriculum
+- ✅ `GET /curriculums` - Get all curriculums
+- ✅ `GET /curriculums/{id}` - Get curriculum by ID
+- ✅ `GET /curriculums/status/{status}` - Get by status
+- ✅ `GET /curriculums/search` - Search curriculums
+- ✅ `PUT /curriculums/{id}` - Update curriculum
+- ✅ `DELETE /curriculums/{id}` - Delete curriculum
 
 **Unit (9 endpoints):**
-- ✅ `POST /api/units` - Create unit
-- ✅ `GET /api/units` - Get all units
-- ✅ `GET /api/units/{id}` - Get unit by ID
-- ✅ `GET /api/units/curriculum/{curriculumId}` - Get units by curriculum
-- ✅ `GET /api/units/curriculum/{curriculumId}/status/{status}` - Get by curriculum and status
-- ✅ `GET /api/units/status/{status}` - Get by status
-- ✅ `GET /api/units/curriculum/{curriculumId}/search` - Search in curriculum
-- ✅ `PUT /api/units/{id}` - Update unit
-- ✅ `DELETE /api/units/{id}` - Delete unit
+- ✅ `POST /units` - Create unit
+- ✅ `GET /units` - Get all units
+- ✅ `GET /units/{id}` - Get unit by ID
+- ✅ `GET /units/curriculum/{curriculumId}` - Get units by curriculum
+- ✅ `GET /units/curriculum/{curriculumId}/status/{status}` - Get by curriculum and status
+- ✅ `GET /units/status/{status}` - Get by status
+- ✅ `GET /units/curriculum/{curriculumId}/search` - Search in curriculum
+- ✅ `PUT /units/{id}` - Update unit
+- ✅ `DELETE /units/{id}` - Delete unit
 
 **Lesson (9 endpoints):**
-- ✅ `POST /api/lessons` - Create lesson
-- ✅ `GET /api/lessons` - Get all lessons
-- ✅ `GET /api/lessons/{id}` - Get lesson by ID
-- ✅ `GET /api/lessons/unit/{unitId}` - Get lessons by unit
-- ✅ `GET /api/lessons/unit/{unitId}/status/{status}` - Get by unit and status
-- ✅ `GET /api/lessons/status/{status}` - Get by status
-- ✅ `GET /api/lessons/unit/{unitId}/search` - Search in unit
-- ✅ `PUT /api/lessons/{id}` - Update lesson
-- ✅ `DELETE /api/lessons/{id}` - Delete lesson
+- ✅ `POST /lessons` - Create lesson
+- ✅ `GET /lessons` - Get all lessons
+- ✅ `GET /lessons/{id}` - Get lesson by ID
+- ✅ `GET /lessons/unit/{unitId}` - Get lessons by unit
+- ✅ `GET /lessons/unit/{unitId}/status/{status}` - Get by unit and status
+- ✅ `GET /lessons/status/{status}` - Get by status
+- ✅ `GET /lessons/unit/{unitId}/search` - Search in unit
+- ✅ `PUT /lessons/{id}` - Update lesson
+- ✅ `DELETE /lessons/{id}` - Delete lesson
 
 **Activity (12 endpoints):**
-- ✅ `POST /api/activities` - Create activity
-- ✅ `GET /api/activities` - Get all activities
-- ✅ `GET /api/activities/{id}` - Get activity by ID
-- ✅ `GET /api/activities/lesson/{lessonId}` - Get activities by lesson
-- ✅ `GET /api/activities/lesson/{lessonId}/status/{status}` - Get by lesson and status
-- ✅ `GET /api/activities/type/{type}` - Get by activity type
-- ✅ `GET /api/activities/lesson/{lessonId}/type/{type}` - Get by lesson and type
-- ✅ `GET /api/activities/tag/{tag}` - Get by tag
-- ✅ `GET /api/activities/lesson/{lessonId}/search` - Search in lesson
-- ✅ `GET /api/activities/type/{type}/count` - Count by type
-- ✅ `PUT /api/activities/{id}` - Update activity
-- ✅ `DELETE /api/activities/{id}` - Delete activity
+- ✅ `POST /activities` - Create activity
+- ✅ `GET /activities` - Get all activities
+- ✅ `GET /activities/{id}` - Get activity by ID
+- ✅ `GET /activities/lesson/{lessonId}` - Get activities by lesson
+- ✅ `GET /activities/lesson/{lessonId}/status/{status}` - Get by lesson and status
+- ✅ `GET /activities/type/{type}` - Get by activity type
+- ✅ `GET /activities/lesson/{lessonId}/type/{type}` - Get by lesson and type
+- ✅ `GET /activities/tag/{tag}` - Get by tag
+- ✅ `GET /activities/lesson/{lessonId}/search` - Search in lesson
+- ✅ `GET /activities/type/{type}/count` - Count by type
+- ✅ `PUT /activities/{id}` - Update activity
+- ✅ `DELETE /activities/{id}` - Delete activity
 
 ### School Management (14 endpoints)
-- ✅ `POST /api/schools` - Create school (auto-creates SCHOOL_ADMIN user)
-- ✅ `GET /api/schools` - Get all schools
-- ✅ `GET /api/schools/{id}` - Get school by ID
-- ✅ `GET /api/schools/active` - Get active schools
-- ✅ `GET /api/schools/status` - Get by status
-- ✅ `GET /api/schools/city/{city}` - Get by city
-- ✅ `GET /api/schools/country/{country}` - Get by country
-- ✅ `GET /api/schools/search` - Search schools
-- ✅ `GET /api/schools/capacity/available` - Get schools with capacity
-- ✅ `GET /api/schools/stats` - Get school statistics
-- ✅ `PUT /api/schools/{id}` - Update school
-- ✅ `PATCH /api/schools/{id}/activate` - Activate school
-- ✅ `PATCH /api/schools/{id}/deactivate` - Deactivate school
-- ✅ `DELETE /api/schools/{id}` - Delete school
+- ✅ `POST /schools` - Create school (auto-creates SCHOOL_ADMIN user)
+- ✅ `GET /schools` - Get all schools
+- ✅ `GET /schools/{id}` - Get school by ID
+- ✅ `GET /schools/active` - Get active schools
+- ✅ `GET /schools/status` - Get by status
+- ✅ `GET /schools/city/{city}` - Get by city
+- ✅ `GET /schools/country/{country}` - Get by country
+- ✅ `GET /schools/search` - Search schools
+- ✅ `GET /schools/capacity/available` - Get schools with capacity
+- ✅ `GET /schools/stats` - Get school statistics
+- ✅ `PUT /schools/{id}` - Update school
+- ✅ `PATCH /schools/{id}/activate` - Activate school
+- ✅ `PATCH /schools/{id}/deactivate` - Deactivate school
+- ✅ `DELETE /schools/{id}` - Delete school
 
 ### Progress Tracking (12 endpoints)
-- ✅ `POST /api/progress/enroll/{studentId}` - Enroll student in curriculum
-- ✅ `GET /api/progress/my-summary` - Get student's progress summary
-- ✅ `GET /api/progress/student/{studentId}/summary` - Get student summary (admin view)
-- ✅ `GET /api/progress/student/{studentId}/curriculum/{curriculumId}` - Get specific progress
-- ✅ `GET /api/progress/student/{studentId}` - Get all student progress
-- ✅ `GET /api/progress/my-progress` - Get own progress list
-- ✅ `POST /api/progress/activity/{activityId}/start` - Start activity
-- ✅ `POST /api/progress/activity/{activityId}/complete` - Complete activity
-- ✅ `GET /api/progress/activity/{activityId}` - Get activity progress
-- ✅ `POST /api/progress/quiz/{quizId}/submit` - Submit quiz attempt
-- ✅ `GET /api/progress/quiz/{quizId}/attempts` - Get own quiz attempts
-- ✅ `GET /api/progress/student/{studentId}/quiz/{quizId}/attempts` - Get student quiz attempts
+- ✅ `POST /progress/enroll/{studentId}` - Enroll student in curriculum
+- ✅ `GET /progress/my-summary` - Get student's progress summary
+- ✅ `GET /progress/student/{studentId}/summary` - Get student summary (admin view)
+- ✅ `GET /progress/student/{studentId}/curriculum/{curriculumId}` - Get specific progress
+- ✅ `GET /progress/student/{studentId}` - Get all student progress
+- ✅ `GET /progress/my-progress` - Get own progress list
+- ✅ `POST /progress/activity/{activityId}/start` - Start activity
+- ✅ `POST /progress/activity/{activityId}/complete` - Complete activity
+- ✅ `GET /progress/activity/{activityId}` - Get activity progress
+- ✅ `POST /progress/quiz/{quizId}/submit` - Submit quiz attempt
+- ✅ `GET /progress/quiz/{quizId}/attempts` - Get own quiz attempts
+- ✅ `GET /progress/student/{studentId}/quiz/{quizId}/attempts` - Get student quiz attempts
 
 ### Admin Panel (6 endpoints)
-- ✅ `GET /api/admin-panel/stats/system` - System-wide statistics
-- ✅ `GET /api/admin-panel/analytics/curriculum/{curriculumId}` - Curriculum analytics
-- ✅ `GET /api/admin-panel/students/top-performers` - Top performing students
-- ✅ `GET /api/admin-panel/students/performance` - All students performance
-- ✅ `GET /api/admin-panel/students/{studentId}/performance` - Student performance details
-- ✅ `GET /api/admin-panel/curriculum/{curriculumId}/leaderboard` - Curriculum leaderboard
+- ✅ `GET /admin-panel/stats/system` - System-wide statistics
+- ✅ `GET /admin-panel/analytics/curriculum/{curriculumId}` - Curriculum analytics
+- ✅ `GET /admin-panel/students/top-performers` - Top performing students
+- ✅ `GET /admin-panel/students/performance` - All students performance
+- ✅ `GET /admin-panel/students/{studentId}/performance` - Student performance details
+- ✅ `GET /admin-panel/curriculum/{curriculumId}/leaderboard` - Curriculum leaderboard
 
 ## Getting Started
 
@@ -268,19 +268,19 @@ See [Backend Setup Guide](../docs/developer-guides/backend-setup.md) for detaile
 
 4. **Access API**:
    - Base URL: `http://localhost:8080/api`
-   - Health check: `http://localhost:8080/api/actuator/health`
+   - Health check: `http://localhost:8080/actuator/health`
 
 ## Documentation
 
 ### API Documentation
-- [API Endpoints Summary](../docs/api/endpoints-summary.md) - Quick reference for all 104 endpoints
-- [Authentication API](../docs/api/authentication-api.md) - Authentication endpoints
-- [Password Reset API](../docs/api/password-reset-api.md) - Password reset flow
-- [User Management API](../docs/api/user-management-api.md) - User management endpoints
-- [Curriculum API](../docs/api/curriculum-api.md) - Curriculum management (37 endpoints)
-- [School Management API](../docs/api/school-management-api.md) - School management (14 endpoints)
-- [Progress Tracking API](../docs/api/progress-tracking-api.md) - Progress tracking (12 endpoints)
-- [Admin Panel API](../docs/api/admin-panel-api.md) - Admin panel analytics (6 endpoints)
+- [API Endpoints Summary](../docs/endpoints-summary.md) - Quick reference for all 104 endpoints
+- [Authentication API](../docs/authentication-api.md) - Authentication endpoints
+- [Password Reset API](../docs/password-reset-api.md) - Password reset flow
+- [User Management API](../docs/user-management-api.md) - User management endpoints
+- [Curriculum API](../docs/curriculum-api.md) - Curriculum management (37 endpoints)
+- [School Management API](../docs/school-management-api.md) - School management (14 endpoints)
+- [Progress Tracking API](../docs/progress-tracking-api.md) - Progress tracking (12 endpoints)
+- [Admin Panel API](../docs/admin-panel-api.md) - Admin panel analytics (6 endpoints)
 
 ### Developer Guides
 - [Backend Setup Guide](../docs/developer-guides/backend-setup.md) - Installation & setup

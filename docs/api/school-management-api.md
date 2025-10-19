@@ -2,7 +2,7 @@
 
 ## Base URL
 ```
-http://localhost:8080/api/schools
+http://localhost:8080/schools
 ```
 
 ## Overview
@@ -14,7 +14,7 @@ The School Management API provides endpoints for managing educational institutio
 
 ### 1. Create School
 
-**Endpoint:** `POST /api/schools`
+**Endpoint:** `POST /schools`
 
 **Authorization:** SUPER_ADMIN only
 
@@ -85,7 +85,7 @@ The School Management API provides endpoints for managing educational institutio
 
 ### 2. Get All Schools
 
-**Endpoint:** `GET /api/schools`
+**Endpoint:** `GET /schools`
 
 **Authorization:** SUPER_ADMIN only
 
@@ -95,7 +95,7 @@ The School Management API provides endpoints for managing educational institutio
 
 ### 3. Get School by ID
 
-**Endpoint:** `GET /api/schools/{id}`
+**Endpoint:** `GET /schools/{id}`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -105,7 +105,7 @@ The School Management API provides endpoints for managing educational institutio
 
 ### 4. Get Active Schools
 
-**Endpoint:** `GET /api/schools/active`
+**Endpoint:** `GET /schools/active`
 
 **Authorization:** All authenticated users
 
@@ -117,7 +117,7 @@ The School Management API provides endpoints for managing educational institutio
 
 ### 5. Get Schools by Status
 
-**Endpoint:** `GET /api/schools/status?isActive={true|false}`
+**Endpoint:** `GET /schools/status?isActive={true|false}`
 
 **Authorization:** SUPER_ADMIN only
 
@@ -130,7 +130,7 @@ The School Management API provides endpoints for managing educational institutio
 
 ### 6. Get Schools by City
 
-**Endpoint:** `GET /api/schools/city/{city}`
+**Endpoint:** `GET /schools/city/{city}`
 
 **Authorization:** All authenticated users
 
@@ -143,7 +143,7 @@ The School Management API provides endpoints for managing educational institutio
 
 ### 7. Get Schools by Country
 
-**Endpoint:** `GET /api/schools/country/{country}`
+**Endpoint:** `GET /schools/country/{country}`
 
 **Authorization:** All authenticated users
 
@@ -156,7 +156,7 @@ The School Management API provides endpoints for managing educational institutio
 
 ### 8. Search Schools
 
-**Endpoint:** `GET /api/schools/search?searchTerm={term}`
+**Endpoint:** `GET /schools/search?searchTerm={term}`
 
 **Authorization:** All authenticated users
 
@@ -169,7 +169,7 @@ The School Management API provides endpoints for managing educational institutio
 
 ### 9. Get Schools with Available Capacity
 
-**Endpoint:** `GET /api/schools/capacity/available`
+**Endpoint:** `GET /schools/capacity/available`
 
 **Authorization:** All authenticated users
 
@@ -181,7 +181,7 @@ The School Management API provides endpoints for managing educational institutio
 
 ### 10. Get School Statistics
 
-**Endpoint:** `GET /api/schools/stats`
+**Endpoint:** `GET /schools/stats`
 
 **Authorization:** SUPER_ADMIN only
 
@@ -198,7 +198,7 @@ The School Management API provides endpoints for managing educational institutio
 
 ### 11. Update School
 
-**Endpoint:** `PUT /api/schools/{id}`
+**Endpoint:** `PUT /schools/{id}`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -210,7 +210,7 @@ The School Management API provides endpoints for managing educational institutio
 
 ### 12. Activate School
 
-**Endpoint:** `PATCH /api/schools/{id}/activate`
+**Endpoint:** `PATCH /schools/{id}/activate`
 
 **Authorization:** SUPER_ADMIN only
 
@@ -225,7 +225,7 @@ The School Management API provides endpoints for managing educational institutio
 
 ### 13. Deactivate School
 
-**Endpoint:** `PATCH /api/schools/{id}/deactivate`
+**Endpoint:** `PATCH /schools/{id}/deactivate`
 
 **Authorization:** SUPER_ADMIN only
 
@@ -240,7 +240,7 @@ The School Management API provides endpoints for managing educational institutio
 
 ### 14. Delete School
 
-**Endpoint:** `DELETE /api/schools/{id}`
+**Endpoint:** `DELETE /schools/{id}`
 
 **Authorization:** SUPER_ADMIN only
 
@@ -256,7 +256,7 @@ The School Management API provides endpoints for managing educational institutio
 ## School Creation Flow
 
 ```
-1. Super Admin creates school → POST /api/schools
+1. Super Admin creates school → POST /schools
    ↓
 2. System creates School entity
    ↓
@@ -317,7 +317,7 @@ The School Management API provides endpoints for managing educational institutio
 
 ### Create School
 ```bash
-curl -X POST http://localhost:8080/api/schools \
+curl -X POST http://localhost:8080/schools \
   -H "Authorization: Bearer SUPER_ADMIN_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -333,31 +333,31 @@ curl -X POST http://localhost:8080/api/schools \
 
 ### Get All Active Schools
 ```bash
-curl -X GET http://localhost:8080/api/schools/active \
+curl -X GET http://localhost:8080/schools/active \
   -H "Authorization: Bearer TOKEN"
 ```
 
 ### Search Schools
 ```bash
-curl -X GET "http://localhost:8080/api/schools/search?searchTerm=Azhar" \
+curl -X GET "http://localhost:8080/schools/search?searchTerm=Azhar" \
   -H "Authorization: Bearer TOKEN"
 ```
 
 ### Get Schools by City
 ```bash
-curl -X GET http://localhost:8080/api/schools/city/Cairo \
+curl -X GET http://localhost:8080/schools/city/Cairo \
   -H "Authorization: Bearer TOKEN"
 ```
 
 ### Get Schools with Capacity
 ```bash
-curl -X GET http://localhost:8080/api/schools/capacity/available \
+curl -X GET http://localhost:8080/schools/capacity/available \
   -H "Authorization: Bearer TOKEN"
 ```
 
 ### Update School
 ```bash
-curl -X PUT http://localhost:8080/api/schools/1 \
+curl -X PUT http://localhost:8080/schools/1 \
   -H "Authorization: Bearer ADMIN_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -368,7 +368,7 @@ curl -X PUT http://localhost:8080/api/schools/1 \
 
 ### Get School Statistics
 ```bash
-curl -X GET http://localhost:8080/api/schools/stats \
+curl -X GET http://localhost:8080/schools/stats \
   -H "Authorization: Bearer SUPER_ADMIN_TOKEN"
 ```
 

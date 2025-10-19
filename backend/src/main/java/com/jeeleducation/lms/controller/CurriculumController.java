@@ -28,7 +28,7 @@ import java.util.List;
  * Accessible by SUPER_ADMIN and SCHOOL_ADMIN roles.
  */
 @RestController
-@RequestMapping("/api/curriculums")
+@RequestMapping("/curriculums")
 public class CurriculumController {
 
     @Autowired

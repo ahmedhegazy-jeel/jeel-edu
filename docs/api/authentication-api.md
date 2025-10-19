@@ -2,7 +2,7 @@
 
 ## Base URL
 ```
-http://localhost:8080/api/auth
+http://localhost:8080/auth
 ```
 
 ## Endpoints
@@ -215,7 +215,7 @@ Authorization: Bearer <token>
 ```javascript
 // Login
 async function login(usernameOrEmail, password) {
-  const response = await fetch('http://localhost:8080/api/auth/login', {
+  const response = await fetch('http://localhost:8080/auth/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -242,7 +242,7 @@ async function login(usernameOrEmail, password) {
 async function fetchProtectedData() {
   const accessToken = localStorage.getItem('accessToken');
   
-  const response = await fetch('http://localhost:8080/api/users/me', {
+  const response = await fetch('http://localhost:8080/users/me', {
     method: 'GET',
     headers: {
       'Authorization': `Bearer ${accessToken}`,
@@ -263,7 +263,7 @@ async function fetchProtectedData() {
 async function refreshAccessToken() {
   const refreshToken = localStorage.getItem('refreshToken');
   
-  const response = await fetch('http://localhost:8080/api/auth/refresh', {
+  const response = await fetch('http://localhost:8080/auth/refresh', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -285,7 +285,7 @@ async function refreshAccessToken() {
 async function logout() {
   const accessToken = localStorage.getItem('accessToken');
   
-  await fetch('http://localhost:8080/api/auth/logout', {
+  await fetch('http://localhost:8080/auth/logout', {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${accessToken}`,
@@ -307,7 +307,7 @@ async function logout() {
 
 ### Login
 ```bash
-curl -X POST http://localhost:8080/api/auth/login \
+curl -X POST http://localhost:8080/auth/login \
   -H "Content-Type: application/json" \
   -d '{
     "usernameOrEmail": "admin",
@@ -317,13 +317,13 @@ curl -X POST http://localhost:8080/api/auth/login \
 
 ### Access Protected Endpoint
 ```bash
-curl -X GET http://localhost:8080/api/users/me \
+curl -X GET http://localhost:8080/users/me \
   -H "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9..."
 ```
 
 ### Refresh Token
 ```bash
-curl -X POST http://localhost:8080/api/auth/refresh \
+curl -X POST http://localhost:8080/auth/refresh \
   -H "Content-Type: application/json" \
   -d '{
     "refreshToken": "eyJhbGciOiJIUzUxMiJ9..."
@@ -332,7 +332,7 @@ curl -X POST http://localhost:8080/api/auth/refresh \
 
 ### Logout
 ```bash
-curl -X POST http://localhost:8080/api/auth/logout \
+curl -X POST http://localhost:8080/auth/logout \
   -H "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9..."
 ```
 
@@ -346,13 +346,13 @@ The following URL patterns are protected by role:
 |-------------|---------------|
 | `/auth/**` | Public (no authentication) |
 | `/public/**` | Public (no authentication) |
-| `/api/admin/**` | SUPER_ADMIN, SCHOOL_ADMIN |
-| `/api/super-admin/**` | SUPER_ADMIN only |
-| `/api/school-admin/**` | SCHOOL_ADMIN only |
-| `/api/teacher/**` | TEACHER only |
-| `/api/parent/**` | PARENT only |
-| `/api/student/**` | STUDENT only |
-| All other `/api/**` | Any authenticated user |
+| `/admin/**` | SUPER_ADMIN, SCHOOL_ADMIN |
+| `/super-admin/**` | SUPER_ADMIN only |
+| `/school-admin/**` | SCHOOL_ADMIN only |
+| `/teacher/**` | TEACHER only |
+| `/parent/**` | PARENT only |
+| `/student/**` | STUDENT only |
+| All other `/**` | Any authenticated user |
 
 ---
 

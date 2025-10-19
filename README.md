@@ -46,12 +46,35 @@ JeelEducation-LMS/
 
 ## 🚀 Getting Started
 
-### Prerequisites
-- **Node.js** v18+ (for frontend - coming soon)
+### ⚡ Quick Start with Docker (Recommended)
+
+```bash
+# 1. Clone repository
+git clone <repository-url>
+cd jeeleducation-lms
+
+# 2. Start all services (MySQL, Backend, Frontend)
+docker-compose up -d
+
+# 3. Access the application
+# Frontend: http://localhost:3000
+# Backend: http://localhost:8080/api
+```
+
+**That's it!** Visit http://localhost:3000 to start using the LMS! 🎉
+
+See **[DEPLOYMENT.md](./DEPLOYMENT.md)** for production deployment (AWS + Vercel).
+
+---
+
+### Manual Setup
+
+#### Prerequisites
+- **Node.js** v18+
 - **Java JDK** v17+
 - **Maven** 3.8+
 - **MySQL** 8.0+
-- **Docker** (optional, for deployment)
+- **Docker** (optional)
 
 ### Backend Setup (✅ Ready to Use)
 
@@ -74,17 +97,17 @@ JeelEducation-LMS/
 
 4. **Access API**:
    - Base URL: `http://localhost:8080/api`
-   - Try: `http://localhost:8080/api/actuator/health`
+   - Try: `http://localhost:8080/actuator/health`
 
 5. **Test Authentication**:
    ```bash
    # Register a student
-   curl -X POST http://localhost:8080/api/auth/register/student \
+   curl -X POST http://localhost:8080/auth/register/student \
      -H "Content-Type: application/json" \
      -d '{"username":"student1","email":"test@example.com","password":"password123","firstName":"Test","lastName":"User"}'
    
    # Login
-   curl -X POST http://localhost:8080/api/auth/login \
+   curl -X POST http://localhost:8080/auth/login \
      -H "Content-Type: application/json" \
      -d '{"usernameOrEmail":"student1","password":"password123"}'
    ```
@@ -117,7 +140,8 @@ See [Backend Setup Guide](docs/developer-guides/backend-setup.md) for detailed i
 **Phase 1: Planning & Setup** - ✅ **100% Complete**  
 **Phase 2: Authentication System** - ✅ **100% Complete**  
 **Phase 3: Backend APIs** - ✅ **100% Complete**  
-**Phase 4: Frontend Development** - ✅ **100% Complete (17/17 tasks)**
+**Phase 4: Frontend Development** - ✅ **100% Complete (17/17 tasks)**  
+**Phase 6: Deployment** - 🚧 **60% Complete (Docker & CI/CD ready)**
 
 #### Backend Completion:
 - ✅ **ALL CURRICULUM SERVICES COMPLETE** (4 services: Curriculum, Unit, Lesson, Activity)
@@ -166,6 +190,15 @@ See [Backend Setup Guide](docs/developer-guides/backend-setup.md) for detailed i
 - ✅ **STUDENT LEARNING INTERFACE** (Complete interactive experience with all 8 activity viewers)
 
 See [PROJECT_PLAN.md](./PROJECT_PLAN.md) for the complete development roadmap.
+
+#### Deployment:
+- ✅ **DOCKER SUPPORT** (Multi-stage builds, Docker Compose for local development)
+- ✅ **CI/CD PIPELINE** (Bitbucket Pipelines with automated testing & deployment)
+- ✅ **AWS CONFIGURATION** (Elastic Beanstalk, ECS, EC2 options)
+- ✅ **VERCEL CONFIGURATION** (Frontend deployment ready)
+- 📄 **Documentation** (Complete deployment guides for all platforms)
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for quick start deployment guide.
 
 ### 📊 Implementation Status
 **Backend:**

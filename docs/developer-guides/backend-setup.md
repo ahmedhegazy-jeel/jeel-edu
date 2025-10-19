@@ -109,7 +109,7 @@ The application should start on port 8080 with context path `/api`.
 
 Check the health endpoint:
 ```bash
-curl http://localhost:8080/api/actuator/health
+curl http://localhost:8080/actuator/health
 ```
 
 Or simply open in browser:
@@ -271,6 +271,6 @@ Once the backend is running:
 4. Build remaining business logic
 
 For more information:
-- See `docs/api/` for API documentation (coming soon)
+- See `docs/` for API documentation (coming soon)
 - See `docs/database/user-schema.md` for database schema details
 

@@ -18,7 +18,7 @@ import java.util.Map;
  * Accessible by TEACHER role.
  */
 @RestController
-@RequestMapping("/api/teacher")
+@RequestMapping("/teacher")
 @PreAuthorize("hasRole('TEACHER')")
 public class TeacherController {
 

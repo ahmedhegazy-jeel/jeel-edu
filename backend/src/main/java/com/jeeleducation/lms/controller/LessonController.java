@@ -26,7 +26,7 @@ import java.util.List;
  * REST controller for lesson management operations.
  */
 @RestController
-@RequestMapping("/api/lessons")
+@RequestMapping("/lessons")
 public class LessonController {
 
     @Autowired

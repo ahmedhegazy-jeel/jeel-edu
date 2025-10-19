@@ -14,7 +14,7 @@ The Curriculum Management API provides complete CRUD operations for managing lea
 
 ### 1. Create Curriculum
 
-**Endpoint:** `POST /api/curriculums`
+**Endpoint:** `POST /curriculums`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -46,19 +46,19 @@ The Curriculum Management API provides complete CRUD operations for managing lea
 
 ### 2. Get All Curriculums
 
-**Endpoint:** `GET /api/curriculums`
+**Endpoint:** `GET /curriculums`
 
 **Success Response (200 OK):** Array of curriculum DTOs
 
 ### 3. Get Curriculum by ID
 
-**Endpoint:** `GET /api/curriculums/{id}`
+**Endpoint:** `GET /curriculums/{id}`
 
 **Success Response (200 OK):** Curriculum DTO
 
 ### 4. Get Curriculums by Status
 
-**Endpoint:** `GET /api/curriculums/status/{status}`
+**Endpoint:** `GET /curriculums/status/{status}`
 
 **Path Parameters:**
 - `status`: DRAFT, PUBLISHED, or ARCHIVED
@@ -67,7 +67,7 @@ The Curriculum Management API provides complete CRUD operations for managing lea
 
 ### 5. Search Curriculums
 
-**Endpoint:** `GET /api/curriculums/search?searchTerm={term}`
+**Endpoint:** `GET /curriculums/search?searchTerm={term}`
 
 **Query Parameters:**
 - `searchTerm`: Search term for curriculum name
@@ -76,7 +76,7 @@ The Curriculum Management API provides complete CRUD operations for managing lea
 
 ### 6. Update Curriculum
 
-**Endpoint:** `PUT /api/curriculums/{id}`
+**Endpoint:** `PUT /curriculums/{id}`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -86,7 +86,7 @@ The Curriculum Management API provides complete CRUD operations for managing lea
 
 ### 7. Delete Curriculum
 
-**Endpoint:** `DELETE /api/curriculums/{id}`
+**Endpoint:** `DELETE /curriculums/{id}`
 
 **Authorization:** SUPER_ADMIN only
 
@@ -103,7 +103,7 @@ The Curriculum Management API provides complete CRUD operations for managing lea
 
 ### 8. Create Unit
 
-**Endpoint:** `POST /api/units`
+**Endpoint:** `POST /units`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -140,43 +140,43 @@ The Curriculum Management API provides complete CRUD operations for managing lea
 
 ### 9. Get All Units
 
-**Endpoint:** `GET /api/units`
+**Endpoint:** `GET /units`
 
 **Success Response (200 OK):** Array of unit DTOs
 
 ### 10. Get Unit by ID
 
-**Endpoint:** `GET /api/units/{id}`
+**Endpoint:** `GET /units/{id}`
 
 **Success Response (200 OK):** Unit DTO
 
 ### 11. Get Units by Curriculum
 
-**Endpoint:** `GET /api/units/curriculum/{curriculumId}`
+**Endpoint:** `GET /units/curriculum/{curriculumId}`
 
 **Success Response (200 OK):** Array of units in curriculum (ordered by displayOrder)
 
 ### 12. Get Units by Curriculum and Status
 
-**Endpoint:** `GET /api/units/curriculum/{curriculumId}/status/{status}`
+**Endpoint:** `GET /units/curriculum/{curriculumId}/status/{status}`
 
 **Success Response (200 OK):** Array of units matching criteria
 
 ### 13. Get Units by Status
 
-**Endpoint:** `GET /api/units/status/{status}`
+**Endpoint:** `GET /units/status/{status}`
 
 **Success Response (200 OK):** Array of units with specified status
 
 ### 14. Search Units in Curriculum
 
-**Endpoint:** `GET /api/units/curriculum/{curriculumId}/search?searchTerm={term}`
+**Endpoint:** `GET /units/curriculum/{curriculumId}/search?searchTerm={term}`
 
 **Success Response (200 OK):** Array of matching units
 
 ### 15. Update Unit
 
-**Endpoint:** `PUT /api/units/{id}`
+**Endpoint:** `PUT /units/{id}`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -184,7 +184,7 @@ The Curriculum Management API provides complete CRUD operations for managing lea
 
 ### 16. Delete Unit
 
-**Endpoint:** `DELETE /api/units/{id}`
+**Endpoint:** `DELETE /units/{id}`
 
 **Authorization:** SUPER_ADMIN only
 
@@ -201,7 +201,7 @@ The Curriculum Management API provides complete CRUD operations for managing lea
 
 ### 17. Create Lesson
 
-**Endpoint:** `POST /api/lessons`
+**Endpoint:** `POST /lessons`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -222,43 +222,43 @@ The Curriculum Management API provides complete CRUD operations for managing lea
 
 ### 18. Get All Lessons
 
-**Endpoint:** `GET /api/lessons`
+**Endpoint:** `GET /lessons`
 
 **Success Response (200 OK):** Array of lesson DTOs
 
 ### 19. Get Lesson by ID
 
-**Endpoint:** `GET /api/lessons/{id}`
+**Endpoint:** `GET /lessons/{id}`
 
 **Success Response (200 OK):** Lesson DTO
 
 ### 20. Get Lessons by Unit
 
-**Endpoint:** `GET /api/lessons/unit/{unitId}`
+**Endpoint:** `GET /lessons/unit/{unitId}`
 
 **Success Response (200 OK):** Array of lessons in unit (ordered by displayOrder)
 
 ### 21. Get Lessons by Unit and Status
 
-**Endpoint:** `GET /api/lessons/unit/{unitId}/status/{status}`
+**Endpoint:** `GET /lessons/unit/{unitId}/status/{status}`
 
 **Success Response (200 OK):** Array of lessons matching criteria
 
 ### 22. Get Lessons by Status
 
-**Endpoint:** `GET /api/lessons/status/{status}`
+**Endpoint:** `GET /lessons/status/{status}`
 
 **Success Response (200 OK):** Array of lessons with specified status
 
 ### 23. Search Lessons in Unit
 
-**Endpoint:** `GET /api/lessons/unit/{unitId}/search?searchTerm={term}`
+**Endpoint:** `GET /lessons/unit/{unitId}/search?searchTerm={term}`
 
 **Success Response (200 OK):** Array of matching lessons
 
 ### 24. Update Lesson
 
-**Endpoint:** `PUT /api/lessons/{id}`
+**Endpoint:** `PUT /lessons/{id}`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -266,7 +266,7 @@ The Curriculum Management API provides complete CRUD operations for managing lea
 
 ### 25. Delete Lesson
 
-**Endpoint:** `DELETE /api/lessons/{id}`
+**Endpoint:** `DELETE /lessons/{id}`
 
 **Authorization:** SUPER_ADMIN only
 
@@ -283,7 +283,7 @@ The Curriculum Management API provides complete CRUD operations for managing lea
 
 ### 26. Create Activity
 
-**Endpoint:** `POST /api/activities`
+**Endpoint:** `POST /activities`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -312,31 +312,31 @@ The Curriculum Management API provides complete CRUD operations for managing lea
 
 ### 27. Get All Activities
 
-**Endpoint:** `GET /api/activities`
+**Endpoint:** `GET /activities`
 
 **Success Response (200 OK):** Array of activity DTOs
 
 ### 28. Get Activity by ID
 
-**Endpoint:** `GET /api/activities/{id}`
+**Endpoint:** `GET /activities/{id}`
 
 **Success Response (200 OK):** Activity DTO with type-specific data
 
 ### 29. Get Activities by Lesson
 
-**Endpoint:** `GET /api/activities/lesson/{lessonId}`
+**Endpoint:** `GET /activities/lesson/{lessonId}`
 
 **Success Response (200 OK):** Array of activities in lesson (ordered by displayOrder)
 
 ### 30. Get Activities by Lesson and Status
 
-**Endpoint:** `GET /api/activities/lesson/{lessonId}/status/{status}`
+**Endpoint:** `GET /activities/lesson/{lessonId}/status/{status}`
 
 **Success Response (200 OK):** Array of activities matching criteria
 
 ### 31. Get Activities by Type
 
-**Endpoint:** `GET /api/activities/type/{type}`
+**Endpoint:** `GET /activities/type/{type}`
 
 **Path Parameters:**
 - `type`: TEXT, PDF, AUDIO, VIDEO, INTERACTIVE, QUIZ, BOOK, or HOMEWORK
@@ -345,25 +345,25 @@ The Curriculum Management API provides complete CRUD operations for managing lea
 
 ### 32. Get Activities by Lesson and Type
 
-**Endpoint:** `GET /api/activities/lesson/{lessonId}/type/{type}`
+**Endpoint:** `GET /activities/lesson/{lessonId}/type/{type}`
 
 **Success Response (200 OK):** Array of activities matching criteria
 
 ### 33. Get Activities by Tag
 
-**Endpoint:** `GET /api/activities/tag/{tag}`
+**Endpoint:** `GET /activities/tag/{tag}`
 
 **Success Response (200 OK):** Array of activities with specified tag
 
 ### 34. Search Activities in Lesson
 
-**Endpoint:** `GET /api/activities/lesson/{lessonId}/search?searchTerm={term}`
+**Endpoint:** `GET /activities/lesson/{lessonId}/search?searchTerm={term}`
 
 **Success Response (200 OK):** Array of matching activities
 
 ### 35. Count Activities by Type
 
-**Endpoint:** `GET /api/activities/type/{type}/count`
+**Endpoint:** `GET /activities/type/{type}/count`
 
 **Success Response (200 OK):**
 ```json
@@ -374,7 +374,7 @@ The Curriculum Management API provides complete CRUD operations for managing lea
 
 ### 36. Update Activity
 
-**Endpoint:** `PUT /api/activities/{id}`
+**Endpoint:** `PUT /activities/{id}`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -382,7 +382,7 @@ The Curriculum Management API provides complete CRUD operations for managing lea
 
 ### 37. Delete Activity
 
-**Endpoint:** `DELETE /api/activities/{id}`
+**Endpoint:** `DELETE /activities/{id}`
 
 **Authorization:** SUPER_ADMIN only
 
@@ -548,18 +548,18 @@ DRAFT → PUBLISHED → ARCHIVED
 
 | Endpoint Pattern | Allowed Roles | Permissions |
 |-----------------|---------------|-------------|
-| POST /api/curriculums | SUPER_ADMIN, SCHOOL_ADMIN | Create |
-| POST /api/units | SUPER_ADMIN, SCHOOL_ADMIN | Create |
-| POST /api/lessons | SUPER_ADMIN, SCHOOL_ADMIN | Create |
-| POST /api/activities | SUPER_ADMIN, SCHOOL_ADMIN | Create |
-| PUT /api/curriculums/{id} | SUPER_ADMIN, SCHOOL_ADMIN | Update |
-| PUT /api/units/{id} | SUPER_ADMIN, SCHOOL_ADMIN | Update |
-| PUT /api/lessons/{id} | SUPER_ADMIN, SCHOOL_ADMIN | Update |
-| PUT /api/activities/{id} | SUPER_ADMIN, SCHOOL_ADMIN | Update |
-| DELETE /api/curriculums/{id} | SUPER_ADMIN only | Delete |
-| DELETE /api/units/{id} | SUPER_ADMIN only | Delete |
-| DELETE /api/lessons/{id} | SUPER_ADMIN only | Delete |
-| DELETE /api/activities/{id} | SUPER_ADMIN only | Delete |
+| POST /curriculums | SUPER_ADMIN, SCHOOL_ADMIN | Create |
+| POST /units | SUPER_ADMIN, SCHOOL_ADMIN | Create |
+| POST /lessons | SUPER_ADMIN, SCHOOL_ADMIN | Create |
+| POST /activities | SUPER_ADMIN, SCHOOL_ADMIN | Create |
+| PUT /curriculums/{id} | SUPER_ADMIN, SCHOOL_ADMIN | Update |
+| PUT /units/{id} | SUPER_ADMIN, SCHOOL_ADMIN | Update |
+| PUT /lessons/{id} | SUPER_ADMIN, SCHOOL_ADMIN | Update |
+| PUT /activities/{id} | SUPER_ADMIN, SCHOOL_ADMIN | Update |
+| DELETE /curriculums/{id} | SUPER_ADMIN only | Delete |
+| DELETE /units/{id} | SUPER_ADMIN only | Delete |
+| DELETE /lessons/{id} | SUPER_ADMIN only | Delete |
+| DELETE /activities/{id} | SUPER_ADMIN only | Delete |
 | GET endpoints | All authenticated users | Read |
 
 ---
@@ -570,7 +570,7 @@ DRAFT → PUBLISHED → ARCHIVED
 
 #### Step 1: Create Curriculum
 ```bash
-curl -X POST http://localhost:8080/api/curriculums \
+curl -X POST http://localhost:8080/curriculums \
   -H "Authorization: Bearer ADMIN_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -583,7 +583,7 @@ curl -X POST http://localhost:8080/api/curriculums \
 
 #### Step 2: Create Unit
 ```bash
-curl -X POST http://localhost:8080/api/units \
+curl -X POST http://localhost:8080/units \
   -H "Authorization: Bearer ADMIN_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -597,7 +597,7 @@ curl -X POST http://localhost:8080/api/units \
 
 #### Step 3: Create Lesson
 ```bash
-curl -X POST http://localhost:8080/api/lessons \
+curl -X POST http://localhost:8080/lessons \
   -H "Authorization: Bearer ADMIN_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -611,7 +611,7 @@ curl -X POST http://localhost:8080/api/lessons \
 
 #### Step 4: Create Activity
 ```bash
-curl -X POST http://localhost:8080/api/activities \
+curl -X POST http://localhost:8080/activities \
   -H "Authorization: Bearer ADMIN_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -627,25 +627,25 @@ curl -X POST http://localhost:8080/api/activities \
 
 #### Get All Units in Curriculum
 ```bash
-curl -X GET http://localhost:8080/api/units/curriculum/1 \
+curl -X GET http://localhost:8080/units/curriculum/1 \
   -H "Authorization: Bearer TOKEN"
 ```
 
 #### Get All Lessons in Unit
 ```bash
-curl -X GET http://localhost:8080/api/lessons/unit/1 \
+curl -X GET http://localhost:8080/lessons/unit/1 \
   -H "Authorization: Bearer TOKEN"
 ```
 
 #### Get All Activities in Lesson
 ```bash
-curl -X GET http://localhost:8080/api/activities/lesson/1 \
+curl -X GET http://localhost:8080/activities/lesson/1 \
   -H "Authorization: Bearer TOKEN"
 ```
 
 #### Get Activities by Type
 ```bash
-curl -X GET http://localhost:8080/api/activities/type/QUIZ \
+curl -X GET http://localhost:8080/activities/type/QUIZ \
   -H "Authorization: Bearer TOKEN"
 ```
 

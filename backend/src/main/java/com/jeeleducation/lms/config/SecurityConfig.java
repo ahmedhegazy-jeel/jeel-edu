@@ -125,12 +125,12 @@ public class SecurityConfig {
                         .requestMatchers("/actuator/health").permitAll()
                         .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
                         // Role-based access for specific paths
-                        .requestMatchers("/api/admin/**").hasAnyRole("SUPER_ADMIN", "SCHOOL_ADMIN")
-                        .requestMatchers("/api/super-admin/**").hasRole("SUPER_ADMIN")
-                        .requestMatchers("/api/school-admin/**").hasRole("SCHOOL_ADMIN")
-                        .requestMatchers("/api/teacher/**").hasRole("TEACHER")
-                        .requestMatchers("/api/parent/**").hasRole("PARENT")
-                        .requestMatchers("/api/student/**").hasRole("STUDENT")
+                        .requestMatchers("/admin/**").hasAnyRole("SUPER_ADMIN", "SCHOOL_ADMIN")
+                        .requestMatchers("/super-admin/**").hasRole("SUPER_ADMIN")
+                        .requestMatchers("/school-admin/**").hasRole("SCHOOL_ADMIN")
+                        .requestMatchers("/teacher/**").hasRole("TEACHER")
+                        .requestMatchers("/parent/**").hasRole("PARENT")
+                        .requestMatchers("/student/**").hasRole("STUDENT")
                         // All other API endpoints require authentication
                         .anyRequest().authenticated()
                 );

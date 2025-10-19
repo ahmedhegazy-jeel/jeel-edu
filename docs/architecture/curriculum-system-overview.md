@@ -235,35 +235,35 @@ Curriculum (Root)
 ## API Endpoints (To Be Implemented)
 
 ### Curriculum Management
-- POST /api/curriculums - Create curriculum
-- GET /api/curriculums - Get all curriculums
-- GET /api/curriculums/{id} - Get curriculum by ID
-- PUT /api/curriculums/{id} - Update curriculum
-- DELETE /api/curriculums/{id} - Delete curriculum
-- GET /api/curriculums/search - Search curriculums
+- POST /curriculums - Create curriculum
+- GET /curriculums - Get all curriculums
+- GET /curriculums/{id} - Get curriculum by ID
+- PUT /curriculums/{id} - Update curriculum
+- DELETE /curriculums/{id} - Delete curriculum
+- GET /curriculums/search - Search curriculums
 
 ### Unit Management
-- POST /api/units - Create unit
-- GET /api/units - Get all units
-- GET /api/curriculums/{curriculumId}/units - Get units by curriculum
-- GET /api/units/{id} - Get unit by ID
-- PUT /api/units/{id} - Update unit
-- DELETE /api/units/{id} - Delete unit
+- POST /units - Create unit
+- GET /units - Get all units
+- GET /curriculums/{curriculumId}/units - Get units by curriculum
+- GET /units/{id} - Get unit by ID
+- PUT /units/{id} - Update unit
+- DELETE /units/{id} - Delete unit
 
 ### Lesson Management
-- POST /api/lessons - Create lesson
-- GET /api/units/{unitId}/lessons - Get lessons by unit
-- GET /api/lessons/{id} - Get lesson by ID
-- PUT /api/lessons/{id} - Update lesson
-- DELETE /api/lessons/{id} - Delete lesson
+- POST /lessons - Create lesson
+- GET /units/{unitId}/lessons - Get lessons by unit
+- GET /lessons/{id} - Get lesson by ID
+- PUT /lessons/{id} - Update lesson
+- DELETE /lessons/{id} - Delete lesson
 
 ### Activity Management
-- POST /api/activities - Create activity
-- GET /api/lessons/{lessonId}/activities - Get activities by lesson
-- GET /api/activities/{id} - Get activity by ID
-- PUT /api/activities/{id} - Update activity
-- DELETE /api/activities/{id} - Delete activity
-- GET /api/activities/type/{type} - Get activities by type
+- POST /activities - Create activity
+- GET /lessons/{lessonId}/activities - Get activities by lesson
+- GET /activities/{id} - Get activity by ID
+- PUT /activities/{id} - Update activity
+- DELETE /activities/{id} - Delete activity
+- GET /activities/type/{type} - Get activities by type
 
 ## Technology Stack
 

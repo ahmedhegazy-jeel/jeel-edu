@@ -20,7 +20,7 @@ import java.util.List;
  * Provides analytics, reports, and system statistics.
  */
 @RestController
-@RequestMapping("/api/admin-panel")
+@RequestMapping("/admin-panel")
 @PreAuthorize("hasAnyRole('SUPER_ADMIN', 'SCHOOL_ADMIN')")
 public class AdminPanelController {
 

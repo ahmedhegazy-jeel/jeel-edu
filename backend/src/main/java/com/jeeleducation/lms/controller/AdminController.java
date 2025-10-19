@@ -18,7 +18,7 @@ import java.util.Map;
  * Accessible by SUPER_ADMIN and SCHOOL_ADMIN roles.
  */
 @RestController
-@RequestMapping("/api/admin")
+@RequestMapping("/admin")
 @PreAuthorize("hasAnyRole('SUPER_ADMIN', 'SCHOOL_ADMIN')")
 public class AdminController {
 

@@ -29,7 +29,7 @@ import java.util.Map;
  * Accessible by SUPER_ADMIN role.
  */
 @RestController
-@RequestMapping("/api/schools")
+@RequestMapping("/schools")
 public class SchoolController {
 
     @Autowired

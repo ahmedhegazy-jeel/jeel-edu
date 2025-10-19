@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import { auth } from '@/lib/auth';
 import { progressAPI } from '@/lib/api';
+import Link from 'next/link';
 
 export default function StudentDashboard() {
   const router = useRouter();

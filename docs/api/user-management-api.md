@@ -88,7 +88,7 @@ The User Management API provides comprehensive user management functionality wit
 
 ### 4. Get Current User Profile
 
-**Endpoint:** `GET /api/users/me`
+**Endpoint:** `GET /users/me`
 
 **Description:** Get the profile of the currently authenticated user.
 
@@ -120,7 +120,7 @@ Authorization: Bearer <access_token>
 
 ### 5. Update Current User Profile
 
-**Endpoint:** `PUT /api/users/me`
+**Endpoint:** `PUT /users/me`
 
 **Description:** Update the profile of the currently authenticated user.
 
@@ -149,7 +149,7 @@ Authorization: Bearer <access_token>
 
 ### 6. Get All Users
 
-**Endpoint:** `GET /api/users`
+**Endpoint:** `GET /users`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -171,7 +171,7 @@ Authorization: Bearer <access_token>
 
 ### 7. Get User by ID
 
-**Endpoint:** `GET /api/users/{id}`
+**Endpoint:** `GET /users/{id}`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -179,7 +179,7 @@ Authorization: Bearer <access_token>
 
 ### 8. Search Users
 
-**Endpoint:** `GET /api/users/search?searchTerm={term}`
+**Endpoint:** `GET /users/search?searchTerm={term}`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -192,7 +192,7 @@ Authorization: Bearer <access_token>
 
 ### 9. Get Users by Role
 
-**Endpoint:** `GET /api/users/role/{role}`
+**Endpoint:** `GET /users/role/{role}`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -205,7 +205,7 @@ Authorization: Bearer <access_token>
 
 ### 10. Create User
 
-**Endpoint:** `POST /api/users`
+**Endpoint:** `POST /users`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -227,7 +227,7 @@ Authorization: Bearer <access_token>
 
 ### 11. Update User
 
-**Endpoint:** `PUT /api/users/{id}`
+**Endpoint:** `PUT /users/{id}`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -237,7 +237,7 @@ Authorization: Bearer <access_token>
 
 ### 12. Activate User
 
-**Endpoint:** `PATCH /api/users/{id}/activate`
+**Endpoint:** `PATCH /users/{id}/activate`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -250,7 +250,7 @@ Authorization: Bearer <access_token>
 
 ### 13. Deactivate User
 
-**Endpoint:** `PATCH /api/users/{id}/deactivate`
+**Endpoint:** `PATCH /users/{id}/deactivate`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -263,7 +263,7 @@ Authorization: Bearer <access_token>
 
 ### 14. Lock User Account
 
-**Endpoint:** `PATCH /api/users/{id}/lock`
+**Endpoint:** `PATCH /users/{id}/lock`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -276,7 +276,7 @@ Authorization: Bearer <access_token>
 
 ### 15. Unlock User Account
 
-**Endpoint:** `PATCH /api/users/{id}/unlock`
+**Endpoint:** `PATCH /users/{id}/unlock`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -289,7 +289,7 @@ Authorization: Bearer <access_token>
 
 ### 16. Get User Statistics
 
-**Endpoint:** `GET /api/users/stats`
+**Endpoint:** `GET /users/stats`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -311,7 +311,7 @@ Authorization: Bearer <access_token>
 
 ### 17. Delete User
 
-**Endpoint:** `DELETE /api/users/{id}`
+**Endpoint:** `DELETE /users/{id}`
 
 **Authorization:** SUPER_ADMIN only
 
@@ -328,7 +328,7 @@ Authorization: Bearer <access_token>
 
 ### 18. Get Admin Dashboard
 
-**Endpoint:** `GET /api/admin/dashboard`
+**Endpoint:** `GET /admin/dashboard`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -346,7 +346,7 @@ Authorization: Bearer <access_token>
 
 ### 19. Get All Teachers
 
-**Endpoint:** `GET /api/admin/teachers`
+**Endpoint:** `GET /admin/teachers`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -354,7 +354,7 @@ Authorization: Bearer <access_token>
 
 ### 20. Get All Students
 
-**Endpoint:** `GET /api/admin/students`
+**Endpoint:** `GET /admin/students`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -362,7 +362,7 @@ Authorization: Bearer <access_token>
 
 ### 21. Get All Parents
 
-**Endpoint:** `GET /api/admin/parents`
+**Endpoint:** `GET /admin/parents`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -374,7 +374,7 @@ Authorization: Bearer <access_token>
 
 ### 22. Get Teacher Dashboard
 
-**Endpoint:** `GET /api/teacher/dashboard`
+**Endpoint:** `GET /teacher/dashboard`
 
 **Authorization:** TEACHER only
 
@@ -388,7 +388,7 @@ Authorization: Bearer <access_token>
 
 ### 23. Get Students (Teacher View)
 
-**Endpoint:** `GET /api/teacher/students`
+**Endpoint:** `GET /teacher/students`
 
 **Authorization:** TEACHER only
 
@@ -400,7 +400,7 @@ Authorization: Bearer <access_token>
 
 ### 24. Get Parent Dashboard
 
-**Endpoint:** `GET /api/parent/dashboard`
+**Endpoint:** `GET /parent/dashboard`
 
 **Authorization:** PARENT only
 
@@ -414,7 +414,7 @@ Authorization: Bearer <access_token>
 
 ### 25. Get Children Progress
 
-**Endpoint:** `GET /api/parent/children/progress`
+**Endpoint:** `GET /parent/children/progress`
 
 **Authorization:** PARENT only
 
@@ -431,7 +431,7 @@ Authorization: Bearer <access_token>
 
 ### 26. Get Student Dashboard
 
-**Endpoint:** `GET /api/student/dashboard`
+**Endpoint:** `GET /student/dashboard`
 
 **Authorization:** STUDENT only
 
@@ -446,7 +446,7 @@ Authorization: Bearer <access_token>
 
 ### 27. Get Student Curriculums
 
-**Endpoint:** `GET /api/student/curriculums`
+**Endpoint:** `GET /student/curriculums`
 
 **Authorization:** STUDENT only
 
@@ -459,7 +459,7 @@ Authorization: Bearer <access_token>
 
 ### 28. Get Student Progress
 
-**Endpoint:** `GET /api/student/progress`
+**Endpoint:** `GET /student/progress`
 
 **Authorization:** STUDENT only
 
@@ -477,13 +477,13 @@ Authorization: Bearer <access_token>
 | Endpoint Pattern | Allowed Roles |
 |-----------------|---------------|
 | `/auth/**` | Public (no auth) |
-| `/api/users/me` | All authenticated users |
-| `/api/users` (CRUD) | SUPER_ADMIN, SCHOOL_ADMIN |
-| `/api/admin/**` | SUPER_ADMIN, SCHOOL_ADMIN |
-| `/api/teacher/**` | TEACHER |
-| `/api/parent/**` | PARENT |
-| `/api/student/**` | STUDENT |
-| DELETE `/api/users/{id}` | SUPER_ADMIN only |
+| `/users/me` | All authenticated users |
+| `/users` (CRUD) | SUPER_ADMIN, SCHOOL_ADMIN |
+| `/admin/**` | SUPER_ADMIN, SCHOOL_ADMIN |
+| `/teacher/**` | TEACHER |
+| `/parent/**` | PARENT |
+| `/student/**` | STUDENT |
+| DELETE `/users/{id}` | SUPER_ADMIN only |
 
 ---
 
@@ -537,7 +537,7 @@ Authorization: Bearer <access_token>
 
 ### Register Student
 ```bash
-curl -X POST http://localhost:8080/api/auth/register/student \
+curl -X POST http://localhost:8080/auth/register/student \
   -H "Content-Type: application/json" \
   -d '{
     "username": "student1",
@@ -550,19 +550,19 @@ curl -X POST http://localhost:8080/api/auth/register/student \
 
 ### Get Current User
 ```bash
-curl -X GET http://localhost:8080/api/users/me \
+curl -X GET http://localhost:8080/users/me \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
 ### Get All Users (Admin)
 ```bash
-curl -X GET http://localhost:8080/api/users \
+curl -X GET http://localhost:8080/users \
   -H "Authorization: Bearer ADMIN_ACCESS_TOKEN"
 ```
 
 ### Create User (Admin)
 ```bash
-curl -X POST http://localhost:8080/api/users \
+curl -X POST http://localhost:8080/users \
   -H "Authorization: Bearer ADMIN_ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -577,7 +577,7 @@ curl -X POST http://localhost:8080/api/users \
 
 ### Get Admin Dashboard
 ```bash
-curl -X GET http://localhost:8080/api/admin/dashboard \
+curl -X GET http://localhost:8080/admin/dashboard \
   -H "Authorization: Bearer ADMIN_ACCESS_TOKEN"
 ```
 

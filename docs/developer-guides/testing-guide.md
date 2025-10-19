@@ -300,7 +300,7 @@ class MyControllerTest {
     void testEndpoint() throws Exception {
         RequestDTO request = new RequestDTO();
         
-        mockMvc.perform(post("/api/resource")
+        mockMvc.perform(post("/resource")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isCreated())

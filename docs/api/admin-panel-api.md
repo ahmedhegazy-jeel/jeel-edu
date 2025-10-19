@@ -2,7 +2,7 @@
 
 ## Base URL
 ```
-http://localhost:8080/api/admin-panel
+http://localhost:8080/admin-panel
 ```
 
 ## Overview
@@ -14,7 +14,7 @@ The Admin Panel API provides comprehensive analytics, reports, and statistics fo
 
 ### 1. Get System Statistics
 
-**Endpoint:** `GET /api/admin-panel/stats/system`
+**Endpoint:** `GET /admin-panel/stats/system`
 
 **Authorization:** SUPER_ADMIN only
 
@@ -62,7 +62,7 @@ The Admin Panel API provides comprehensive analytics, reports, and statistics fo
 
 ### 2. Get Curriculum Analytics
 
-**Endpoint:** `GET /api/admin-panel/analytics/curriculum/{curriculumId}`
+**Endpoint:** `GET /admin-panel/analytics/curriculum/{curriculumId}`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -91,7 +91,7 @@ The Admin Panel API provides comprehensive analytics, reports, and statistics fo
 
 ### 3. Get Top Performing Students
 
-**Endpoint:** `GET /api/admin-panel/students/top-performers?limit={limit}`
+**Endpoint:** `GET /admin-panel/students/top-performers?limit={limit}`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -140,7 +140,7 @@ The Admin Panel API provides comprehensive analytics, reports, and statistics fo
 
 ### 4. Get All Students Performance
 
-**Endpoint:** `GET /api/admin-panel/students/performance`
+**Endpoint:** `GET /admin-panel/students/performance`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -152,7 +152,7 @@ The Admin Panel API provides comprehensive analytics, reports, and statistics fo
 
 ### 5. Get Student Performance Details
 
-**Endpoint:** `GET /api/admin-panel/students/{studentId}/performance`
+**Endpoint:** `GET /admin-panel/students/{studentId}/performance`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -164,7 +164,7 @@ The Admin Panel API provides comprehensive analytics, reports, and statistics fo
 
 ### 6. Get Curriculum Leaderboard
 
-**Endpoint:** `GET /api/admin-panel/curriculum/{curriculumId}/leaderboard?limit={limit}`
+**Endpoint:** `GET /admin-panel/curriculum/{curriculumId}/leaderboard?limit={limit}`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN
 
@@ -183,7 +183,7 @@ The Admin Panel API provides comprehensive analytics, reports, and statistics fo
 
 **System Overview Widget:**
 ```javascript
-// GET /api/admin-panel/stats/system
+// GET /admin-panel/stats/system
 {
   totalUsers: 1523,
   totalSchools: 25,
@@ -194,7 +194,7 @@ The Admin Panel API provides comprehensive analytics, reports, and statistics fo
 
 **Top Performers Widget:**
 ```javascript
-// GET /api/admin-panel/students/top-performers?limit=5
+// GET /admin-panel/students/top-performers?limit=5
 [
   { studentName: "Sara M.", avgScore: 94.2, performanceLevel: "Excellent" },
   { studentName: "Ahmed A.", avgScore: 91.5, performanceLevel: "Excellent" },
@@ -217,7 +217,7 @@ activitiesByType: {
 
 **School Performance:**
 ```javascript
-// GET /api/schools/{id} + analytics
+// GET /schools/{id} + analytics
 {
   schoolName: "Al-Azhar School",
   totalStudents: 350,
@@ -228,7 +228,7 @@ activitiesByType: {
 
 **Student Performance Table:**
 ```javascript
-// GET /api/admin-panel/students/performance
+// GET /admin-panel/students/performance
 [
   { student: "Sara M.", completion: 85%, avgScore: 94.2 },
   { student: "Ahmed A.", completion: 100%, avgScore: 91.5 },
@@ -240,7 +240,7 @@ activitiesByType: {
 
 **Curriculum Stats:**
 ```javascript
-// GET /api/admin-panel/analytics/curriculum/{id}
+// GET /admin-panel/analytics/curriculum/{id}
 {
   curriculumName: "Arabic Language",
   enrolledStudents: 450,
@@ -252,7 +252,7 @@ activitiesByType: {
 
 **Leaderboard:**
 ```javascript
-// GET /api/admin-panel/curriculum/{id}/leaderboard?limit=10
+// GET /admin-panel/curriculum/{id}/leaderboard?limit=10
 [
   { rank: 1, student: "Sara M.", points: 950, completion: 95% },
   { rank: 2, student: "Ahmed A.", points: 920, completion: 92% },
@@ -282,7 +282,7 @@ Students are automatically categorized based on average quiz score:
 ```javascript
 // Fetch system statistics
 async function getSystemStats() {
-  const response = await fetch('http://localhost:8080/api/admin-panel/stats/system', {
+  const response = await fetch('http://localhost:8080/admin-panel/stats/system', {
     headers: {
       'Authorization': `Bearer ${adminToken}`,
     },
@@ -314,7 +314,7 @@ async function getSystemStats() {
 // Fetch top performers
 async function getTopPerformers(limit = 10) {
   const response = await fetch(
-    `http://localhost:8080/api/admin-panel/students/top-performers?limit=${limit}`,
+    `http://localhost:8080/admin-panel/students/top-performers?limit=${limit}`,
     {
       headers: {
         'Authorization': `Bearer ${adminToken}`,
@@ -336,7 +336,7 @@ async function getTopPerformers(limit = 10) {
 // Fetch curriculum analytics
 async function getCurriculumAnalytics(curriculumId) {
   const response = await fetch(
-    `http://localhost:8080/api/admin-panel/analytics/curriculum/${curriculumId}`,
+    `http://localhost:8080/admin-panel/analytics/curriculum/${curriculumId}`,
     {
       headers: {
         'Authorization': `Bearer ${adminToken}`,
@@ -365,7 +365,7 @@ async function getCurriculumAnalytics(curriculumId) {
 // Get student performance
 async function getStudentPerformance(studentId) {
   const response = await fetch(
-    `http://localhost:8080/api/admin-panel/students/${studentId}/performance`,
+    `http://localhost:8080/admin-panel/students/${studentId}/performance`,
     {
       headers: {
         'Authorization': `Bearer ${adminToken}`,
@@ -383,37 +383,37 @@ async function getStudentPerformance(studentId) {
 
 ### Get System Statistics
 ```bash
-curl -X GET http://localhost:8080/api/admin-panel/stats/system \
+curl -X GET http://localhost:8080/admin-panel/stats/system \
   -H "Authorization: Bearer SUPER_ADMIN_TOKEN"
 ```
 
 ### Get Curriculum Analytics
 ```bash
-curl -X GET http://localhost:8080/api/admin-panel/analytics/curriculum/1 \
+curl -X GET http://localhost:8080/admin-panel/analytics/curriculum/1 \
   -H "Authorization: Bearer ADMIN_TOKEN"
 ```
 
 ### Get Top 5 Performers
 ```bash
-curl -X GET "http://localhost:8080/api/admin-panel/students/top-performers?limit=5" \
+curl -X GET "http://localhost:8080/admin-panel/students/top-performers?limit=5" \
   -H "Authorization: Bearer ADMIN_TOKEN"
 ```
 
 ### Get All Students Performance
 ```bash
-curl -X GET http://localhost:8080/api/admin-panel/students/performance \
+curl -X GET http://localhost:8080/admin-panel/students/performance \
   -H "Authorization: Bearer ADMIN_TOKEN"
 ```
 
 ### Get Student Performance
 ```bash
-curl -X GET http://localhost:8080/api/admin-panel/students/42/performance \
+curl -X GET http://localhost:8080/admin-panel/students/42/performance \
   -H "Authorization: Bearer ADMIN_TOKEN"
 ```
 
 ### Get Curriculum Leaderboard
 ```bash
-curl -X GET "http://localhost:8080/api/admin-panel/curriculum/1/leaderboard?limit=10" \
+curl -X GET "http://localhost:8080/admin-panel/curriculum/1/leaderboard?limit=10" \
   -H "Authorization: Bearer ADMIN_TOKEN"
 ```
 
@@ -552,16 +552,16 @@ curl -X GET "http://localhost:8080/api/admin-panel/curriculum/1/leaderboard?limi
 ### Also useful for admin panels:
 
 **From UserController:**
-- GET /api/users/stats - User statistics
+- GET /users/stats - User statistics
 
 **From AdminController:**
-- GET /api/admin/dashboard - Admin dashboard data
+- GET /admin/dashboard - Admin dashboard data
 
 **From SchoolController:**
-- GET /api/schools/stats - School statistics
+- GET /schools/stats - School statistics
 
 **From Progress APIs:**
-- GET /api/progress/student/{id}/summary - Individual student analytics
+- GET /progress/student/{id}/summary - Individual student analytics
 
 ---
 

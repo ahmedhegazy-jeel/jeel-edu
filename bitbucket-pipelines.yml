@@ -1,0 +1,117 @@
+image: maven:3.9-eclipse-temurin-17
+
+definitions:
+  services:
+    docker:
+      memory: 2048
+
+  caches:
+    maven-cache: ~/.m2/repository
+    npm-cache: ~/.npm
+
+pipelines:
+  default:
+    - step:
+        name: Build and Test Backend
+        caches:
+          - maven-cache
+        script:
+          - cd backend
+          - mvn clean install -DskipTests
+          - mvn test
+        artifacts:
+          - backend/target/*.jar
+
+    - step:
+        name: Build and Test Frontend
+        image: node:18
+        caches:
+          - npm-cache
+        script:
+          - cd frontend
+          - npm ci
+          - npm run lint
+          - npm run build
+        artifacts:
+          - frontend/.next/**
+          - frontend/out/**
+
+  branches:
+    main:
+      - step:
+          name: Build and Test Backend
+          caches:
+            - maven-cache
+          script:
+            - cd backend
+            - mvn clean install -DskipTests
+            - mvn test
+          artifacts:
+            - backend/target/*.jar
+
+      - step:
+          name: Build and Test Frontend
+          image: node:18
+          caches:
+            - npm-cache
+          script:
+            - cd frontend
+            - npm ci
+            - npm run lint
+            - npm run build
+          artifacts:
+            - frontend/.next/**
+
+      - step:
+          name: Build Docker Images
+          services:
+            - docker
+          script:
+            # Build backend Docker image
+            - docker build -t jeeleducation-backend:latest ./backend
+            - docker build -t jeeleducation-frontend:latest ./frontend
+            # Tag images for registry
+            - docker tag jeeleducation-backend:latest your-registry/jeeleducation-backend:$BITBUCKET_BUILD_NUMBER
+            - docker tag jeeleducation-frontend:latest your-registry/jeeleducation-frontend:$BITBUCKET_BUILD_NUMBER
+            # Push to registry (uncomment when ready)
+            # - docker push your-registry/jeeleducation-backend:$BITBUCKET_BUILD_NUMBER
+            # - docker push your-registry/jeeleducation-frontend:$BITBUCKET_BUILD_NUMBER
+
+      - step:
+          name: Deploy to AWS
+          deployment: production
+          script:
+            - echo "Deploy backend to AWS EC2 or ECS"
+            # Add AWS deployment commands here
+            # Example: aws ecs update-service --cluster your-cluster --service backend-service --force-new-deployment
+
+      - step:
+          name: Deploy Frontend to Vercel
+          deployment: production
+          script:
+            - cd frontend
+            - npm install -g vercel
+            - vercel --prod --token=$VERCEL_TOKEN
+          artifacts:
+            - frontend/.vercel/**
+
+    develop:
+      - step:
+          name: Build and Test
+          caches:
+            - maven-cache
+          script:
+            - cd backend
+            - mvn clean test
+
+      - step:
+          name: Frontend Lint and Build
+          image: node:18
+          caches:
+            - npm-cache
+          script:
+            - cd frontend
+            - npm ci
+            - npm run lint
+            - npm run build
+

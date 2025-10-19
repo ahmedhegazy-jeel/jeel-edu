@@ -13,7 +13,7 @@ import java.util.Map;
  * Accessible by PARENT role.
  */
 @RestController
-@RequestMapping("/api/parent")
+@RequestMapping("/parent")
 @PreAuthorize("hasRole('PARENT')")
 public class ParentController {
 

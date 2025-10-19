@@ -13,7 +13,7 @@ import java.util.Map;
  * Accessible by STUDENT role.
  */
 @RestController
-@RequestMapping("/api/student")
+@RequestMapping("/student")
 @PreAuthorize("hasRole('STUDENT')")
 public class StudentController {
 

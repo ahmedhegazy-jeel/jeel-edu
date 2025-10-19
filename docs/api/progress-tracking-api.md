@@ -2,7 +2,7 @@
 
 ## Base URL
 ```
-http://localhost:8080/api/progress
+http://localhost:8080/progress
 ```
 
 ## Overview
@@ -14,7 +14,7 @@ The Progress Tracking API provides comprehensive tracking of student learning pr
 
 ### 1. Enroll Student in Curriculum
 
-**Endpoint:** `POST /api/progress/enroll/{studentId}`
+**Endpoint:** `POST /progress/enroll/{studentId}`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN, TEACHER
 
@@ -56,7 +56,7 @@ The Progress Tracking API provides comprehensive tracking of student learning pr
 
 ### 2. Get My Progress Summary (Student)
 
-**Endpoint:** `GET /api/progress/my-summary`
+**Endpoint:** `GET /progress/my-summary`
 
 **Authorization:** STUDENT only
 
@@ -90,7 +90,7 @@ The Progress Tracking API provides comprehensive tracking of student learning pr
 
 ### 3. Get Student Progress Summary (Admin/Teacher/Parent)
 
-**Endpoint:** `GET /api/progress/student/{studentId}/summary`
+**Endpoint:** `GET /progress/student/{studentId}/summary`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN, TEACHER, PARENT
 
@@ -102,7 +102,7 @@ The Progress Tracking API provides comprehensive tracking of student learning pr
 
 ### 4. Get Student Progress for Curriculum
 
-**Endpoint:** `GET /api/progress/student/{studentId}/curriculum/{curriculumId}`
+**Endpoint:** `GET /progress/student/{studentId}/curriculum/{curriculumId}`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN, TEACHER, PARENT, STUDENT
 
@@ -114,7 +114,7 @@ The Progress Tracking API provides comprehensive tracking of student learning pr
 
 ### 5. Get All Progress for Student
 
-**Endpoint:** `GET /api/progress/student/{studentId}`
+**Endpoint:** `GET /progress/student/{studentId}`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN, TEACHER, PARENT
 
@@ -126,7 +126,7 @@ The Progress Tracking API provides comprehensive tracking of student learning pr
 
 ### 6. Get My Progress List (Student)
 
-**Endpoint:** `GET /api/progress/my-progress`
+**Endpoint:** `GET /progress/my-progress`
 
 **Authorization:** STUDENT only
 
@@ -138,7 +138,7 @@ The Progress Tracking API provides comprehensive tracking of student learning pr
 
 ### 7. Start Activity
 
-**Endpoint:** `POST /api/progress/activity/{activityId}/start`
+**Endpoint:** `POST /progress/activity/{activityId}/start`
 
 **Authorization:** STUDENT only
 
@@ -168,7 +168,7 @@ The Progress Tracking API provides comprehensive tracking of student learning pr
 
 ### 8. Complete Activity
 
-**Endpoint:** `POST /api/progress/activity/{activityId}/complete`
+**Endpoint:** `POST /progress/activity/{activityId}/complete`
 
 **Authorization:** STUDENT only
 
@@ -199,7 +199,7 @@ The Progress Tracking API provides comprehensive tracking of student learning pr
 
 ### 9. Get My Activity Progress
 
-**Endpoint:** `GET /api/progress/activity/{activityId}`
+**Endpoint:** `GET /progress/activity/{activityId}`
 
 **Authorization:** STUDENT only
 
@@ -211,7 +211,7 @@ The Progress Tracking API provides comprehensive tracking of student learning pr
 
 ### 10. Submit Quiz Attempt
 
-**Endpoint:** `POST /api/progress/quiz/{quizId}/submit`
+**Endpoint:** `POST /progress/quiz/{quizId}/submit`
 
 **Authorization:** STUDENT only
 
@@ -251,7 +251,7 @@ The Progress Tracking API provides comprehensive tracking of student learning pr
 
 ### 11. Get My Quiz Attempts
 
-**Endpoint:** `GET /api/progress/quiz/{quizId}/attempts`
+**Endpoint:** `GET /progress/quiz/{quizId}/attempts`
 
 **Authorization:** STUDENT only
 
@@ -263,7 +263,7 @@ The Progress Tracking API provides comprehensive tracking of student learning pr
 
 ### 12. Get Student Quiz Attempts (Admin/Teacher/Parent)
 
-**Endpoint:** `GET /api/progress/student/{studentId}/quiz/{quizId}/attempts`
+**Endpoint:** `GET /progress/student/{studentId}/quiz/{quizId}/attempts`
 
 **Authorization:** SUPER_ADMIN, SCHOOL_ADMIN, TEACHER, PARENT
 
@@ -279,7 +279,7 @@ The Progress Tracking API provides comprehensive tracking of student learning pr
 
 ```
 1. Admin/Teacher enrolls student in curriculum
-   ↓ POST /api/progress/enroll/{studentId}
+   ↓ POST /progress/enroll/{studentId}
    
 2. System initializes StudentProgress
    - Calculates total units, lessons, activities
@@ -287,14 +287,14 @@ The Progress Tracking API provides comprehensive tracking of student learning pr
    - Marks as started
    
 3. Student starts learning
-   ↓ POST /api/progress/activity/{id}/start
+   ↓ POST /progress/activity/{id}/start
    
 4. System tracks activity access
    - Records startedAt timestamp
    - Tracks lastAccessedAt for resuming
    
 5. Student completes activity
-   ↓ POST /api/progress/activity/{id}/complete
+   ↓ POST /progress/activity/{id}/complete
    
 6. System updates progress
    - Marks activity as completed
@@ -302,7 +302,7 @@ The Progress Tracking API provides comprehensive tracking of student learning pr
    - Updates curriculum completion percentage
    
 7. Student takes quiz
-   ↓ POST /api/progress/quiz/{id}/submit
+   ↓ POST /progress/quiz/{id}/submit
    
 8. System records quiz attempt
    - Calculates score and percentage
@@ -399,7 +399,7 @@ capacityUtilization = (currentScore / scorePercentage) * 100
 
 ### Enroll Student in Curriculum
 ```bash
-curl -X POST http://localhost:8080/api/progress/enroll/5 \
+curl -X POST http://localhost:8080/progress/enroll/5 \
   -H "Authorization: Bearer TEACHER_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"curriculumId": 1}'
@@ -407,19 +407,19 @@ curl -X POST http://localhost:8080/api/progress/enroll/5 \
 
 ### Get My Progress Summary (as Student)
 ```bash
-curl -X GET http://localhost:8080/api/progress/my-summary \
+curl -X GET http://localhost:8080/progress/my-summary \
   -H "Authorization: Bearer STUDENT_TOKEN"
 ```
 
 ### Start Activity (as Student)
 ```bash
-curl -X POST http://localhost:8080/api/progress/activity/10/start \
+curl -X POST http://localhost:8080/progress/activity/10/start \
   -H "Authorization: Bearer STUDENT_TOKEN"
 ```
 
 ### Complete Activity (as Student)
 ```bash
-curl -X POST http://localhost:8080/api/progress/activity/10/complete \
+curl -X POST http://localhost:8080/progress/activity/10/complete \
   -H "Authorization: Bearer STUDENT_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"earnedPoints": 10, "passed": true}'
@@ -427,7 +427,7 @@ curl -X POST http://localhost:8080/api/progress/activity/10/complete \
 
 ### Submit Quiz (as Student)
 ```bash
-curl -X POST http://localhost:8080/api/progress/quiz/15/submit \
+curl -X POST http://localhost:8080/progress/quiz/15/submit \
   -H "Authorization: Bearer STUDENT_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"correctAnswers": 8, "timeSpent": 180}'
@@ -435,13 +435,13 @@ curl -X POST http://localhost:8080/api/progress/quiz/15/submit \
 
 ### Get Quiz Attempts (as Student)
 ```bash
-curl -X GET http://localhost:8080/api/progress/quiz/15/attempts \
+curl -X GET http://localhost:8080/progress/quiz/15/attempts \
   -H "Authorization: Bearer STUDENT_TOKEN"
 ```
 
 ### View Student Progress (as Teacher)
 ```bash
-curl -X GET http://localhost:8080/api/progress/student/5/summary \
+curl -X GET http://localhost:8080/progress/student/5/summary \
   -H "Authorization: Bearer TEACHER_TOKEN"
 ```
 
@@ -517,7 +517,7 @@ Tracks individual quiz attempts.
 ```javascript
 // Get student's progress summary
 async function getMyProgress() {
-  const response = await fetch('http://localhost:8080/api/progress/my-summary', {
+  const response = await fetch('http://localhost:8080/progress/my-summary', {
     headers: {
       'Authorization': `Bearer ${studentToken}`,
     },
@@ -533,7 +533,7 @@ async function getMyProgress() {
 
 // Start an activity
 async function startActivity(activityId) {
-  await fetch(`http://localhost:8080/api/progress/activity/${activityId}/start`, {
+  await fetch(`http://localhost:8080/progress/activity/${activityId}/start`, {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${studentToken}`,
@@ -543,7 +543,7 @@ async function startActivity(activityId) {
 
 // Complete an activity
 async function completeActivity(activityId, earnedPoints, passed) {
-  await fetch(`http://localhost:8080/api/progress/activity/${activityId}/complete`, {
+  await fetch(`http://localhost:8080/progress/activity/${activityId}/complete`, {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${studentToken}`,
@@ -558,7 +558,7 @@ async function completeActivity(activityId, earnedPoints, passed) {
 
 // Submit quiz
 async function submitQuiz(quizId, correctAnswers, timeSpent) {
-  const response = await fetch(`http://localhost:8080/api/progress/quiz/${quizId}/submit`, {
+  const response = await fetch(`http://localhost:8080/progress/quiz/${quizId}/submit`, {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${studentToken}`,
@@ -583,7 +583,7 @@ async function submitQuiz(quizId, correctAnswers, timeSpent) {
 
 // Get quiz attempts history
 async function getQuizHistory(quizId) {
-  const response = await fetch(`http://localhost:8080/api/progress/quiz/${quizId}/attempts`, {
+  const response = await fetch(`http://localhost:8080/progress/quiz/${quizId}/attempts`, {
     headers: {
       'Authorization': `Bearer ${studentToken}`,
     },

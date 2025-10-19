@@ -32,7 +32,7 @@ import java.util.Map;
  * Provides endpoints with role-based access control.
  */
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/users")
 public class UserController {
 
     @Autowired

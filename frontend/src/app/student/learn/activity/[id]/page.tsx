@@ -44,6 +44,21 @@ export default function StudentActivityPage({ params }: { params: { id: string }
     }
   };
 
+  const getActivityIcon = (type: string) => {
+    const icons: { [key: string]: string } = {
+      TEXT: '📄',
+      PDF: '📑',
+      AUDIO: '🔊',
+      BOOK: '📖',
+      VIDEO: '🎥',
+      INTERACTIVE: '🎮',
+      QUIZ: '📝',
+      HOMEWORK: '📋',
+    };
+    return icons[type] || '🎯';
+  };
+
+
   const handleStart = async () => {
     try {
       await progressAPI.startActivity(parseInt(params.id));

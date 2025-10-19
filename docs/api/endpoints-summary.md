@@ -26,56 +26,56 @@
 
 | Method | Endpoint | Description | Auth Required | Roles |
 |--------|----------|-------------|---------------|-------|
-| GET | `/api/users/me` | Get current user | ✅ Yes | All |
-| PUT | `/api/users/me` | Update current user | ✅ Yes | All |
+| GET | `/users/me` | Get current user | ✅ Yes | All |
+| PUT | `/users/me` | Update current user | ✅ Yes | All |
 
 ### User Management Endpoints (Admin)
 
 | Method | Endpoint | Description | Roles |
 |--------|----------|-------------|-------|
-| GET | `/api/users` | Get all users | SUPER_ADMIN, SCHOOL_ADMIN |
-| GET | `/api/users/{id}` | Get user by ID | SUPER_ADMIN, SCHOOL_ADMIN |
-| GET | `/api/users/search?searchTerm=` | Search users | SUPER_ADMIN, SCHOOL_ADMIN |
-| GET | `/api/users/role/{role}` | Get users by role | SUPER_ADMIN, SCHOOL_ADMIN |
-| GET | `/api/users/stats` | Get user statistics | SUPER_ADMIN, SCHOOL_ADMIN |
-| POST | `/api/users` | Create new user | SUPER_ADMIN, SCHOOL_ADMIN |
-| PUT | `/api/users/{id}` | Update user | SUPER_ADMIN, SCHOOL_ADMIN |
-| PATCH | `/api/users/{id}/activate` | Activate user | SUPER_ADMIN, SCHOOL_ADMIN |
-| PATCH | `/api/users/{id}/deactivate` | Deactivate user | SUPER_ADMIN, SCHOOL_ADMIN |
-| PATCH | `/api/users/{id}/lock` | Lock user account | SUPER_ADMIN, SCHOOL_ADMIN |
-| PATCH | `/api/users/{id}/unlock` | Unlock user account | SUPER_ADMIN, SCHOOL_ADMIN |
-| DELETE | `/api/users/{id}` | Delete user | SUPER_ADMIN only |
+| GET | `/users` | Get all users | SUPER_ADMIN, SCHOOL_ADMIN |
+| GET | `/users/{id}` | Get user by ID | SUPER_ADMIN, SCHOOL_ADMIN |
+| GET | `/users/search?searchTerm=` | Search users | SUPER_ADMIN, SCHOOL_ADMIN |
+| GET | `/users/role/{role}` | Get users by role | SUPER_ADMIN, SCHOOL_ADMIN |
+| GET | `/users/stats` | Get user statistics | SUPER_ADMIN, SCHOOL_ADMIN |
+| POST | `/users` | Create new user | SUPER_ADMIN, SCHOOL_ADMIN |
+| PUT | `/users/{id}` | Update user | SUPER_ADMIN, SCHOOL_ADMIN |
+| PATCH | `/users/{id}/activate` | Activate user | SUPER_ADMIN, SCHOOL_ADMIN |
+| PATCH | `/users/{id}/deactivate` | Deactivate user | SUPER_ADMIN, SCHOOL_ADMIN |
+| PATCH | `/users/{id}/lock` | Lock user account | SUPER_ADMIN, SCHOOL_ADMIN |
+| PATCH | `/users/{id}/unlock` | Unlock user account | SUPER_ADMIN, SCHOOL_ADMIN |
+| DELETE | `/users/{id}` | Delete user | SUPER_ADMIN only |
 
 ### Admin Dashboard Endpoints
 
 | Method | Endpoint | Description | Roles |
 |--------|----------|-------------|-------|
-| GET | `/api/admin/dashboard` | Get dashboard stats | SUPER_ADMIN, SCHOOL_ADMIN |
-| GET | `/api/admin/teachers` | Get all teachers | SUPER_ADMIN, SCHOOL_ADMIN |
-| GET | `/api/admin/students` | Get all students | SUPER_ADMIN, SCHOOL_ADMIN |
-| GET | `/api/admin/parents` | Get all parents | SUPER_ADMIN, SCHOOL_ADMIN |
+| GET | `/admin/dashboard` | Get dashboard stats | SUPER_ADMIN, SCHOOL_ADMIN |
+| GET | `/admin/teachers` | Get all teachers | SUPER_ADMIN, SCHOOL_ADMIN |
+| GET | `/admin/students` | Get all students | SUPER_ADMIN, SCHOOL_ADMIN |
+| GET | `/admin/parents` | Get all parents | SUPER_ADMIN, SCHOOL_ADMIN |
 
 ### Teacher Endpoints
 
 | Method | Endpoint | Description | Roles |
 |--------|----------|-------------|-------|
-| GET | `/api/teacher/dashboard` | Get teacher dashboard | TEACHER |
-| GET | `/api/teacher/students` | Get students | TEACHER |
+| GET | `/teacher/dashboard` | Get teacher dashboard | TEACHER |
+| GET | `/teacher/students` | Get students | TEACHER |
 
 ### Parent Endpoints
 
 | Method | Endpoint | Description | Roles |
 |--------|----------|-------------|-------|
-| GET | `/api/parent/dashboard` | Get parent dashboard | PARENT |
-| GET | `/api/parent/children/progress` | Get children progress | PARENT |
+| GET | `/parent/dashboard` | Get parent dashboard | PARENT |
+| GET | `/parent/children/progress` | Get children progress | PARENT |
 
 ### Student Endpoints
 
 | Method | Endpoint | Description | Roles |
 |--------|----------|-------------|-------|
-| GET | `/api/student/dashboard` | Get student dashboard | STUDENT |
-| GET | `/api/student/curriculums` | Get curriculums | STUDENT |
-| GET | `/api/student/progress` | Get progress | STUDENT |
+| GET | `/student/dashboard` | Get student dashboard | STUDENT |
+| GET | `/student/curriculums` | Get curriculums | STUDENT |
+| GET | `/student/progress` | Get progress | STUDENT |
 
 ---
 
@@ -127,33 +127,33 @@
 
 ### 1. Register a Student
 ```bash
-curl -X POST http://localhost:8080/api/auth/register/student \
+curl -X POST http://localhost:8080/auth/register/student \
   -H "Content-Type: application/json" \
   -d '{"username":"student1","email":"student1@test.com","password":"password123","firstName":"Sara","lastName":"Ahmed"}'
 ```
 
 ### 2. Login
 ```bash
-curl -X POST http://localhost:8080/api/auth/login \
+curl -X POST http://localhost:8080/auth/login \
   -H "Content-Type: application/json" \
   -d '{"usernameOrEmail":"student1","password":"password123"}'
 ```
 
 ### 3. Get Current Profile
 ```bash
-curl -X GET http://localhost:8080/api/users/me \
+curl -X GET http://localhost:8080/users/me \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
 ### 4. Get Student Dashboard
 ```bash
-curl -X GET http://localhost:8080/api/student/dashboard \
+curl -X GET http://localhost:8080/student/dashboard \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
 ### 5. Create User (Admin)
 ```bash
-curl -X POST http://localhost:8080/api/users \
+curl -X POST http://localhost:8080/users \
   -H "Authorization: Bearer ADMIN_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"username":"teacher1","email":"teacher1@test.com","password":"password123","firstName":"Ahmed","lastName":"Hassan","role":"TEACHER"}'

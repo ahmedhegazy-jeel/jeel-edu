@@ -28,7 +28,7 @@ import java.util.Map;
  * REST controller for activity management operations.
  */
 @RestController
-@RequestMapping("/api/activities")
+@RequestMapping("/activities")
 public class ActivityController {
 
     @Autowired

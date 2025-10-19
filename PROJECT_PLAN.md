@@ -21,7 +21,7 @@
 			 
 - **Tech Stack**:
   - Frontend: [React / Next.js + Tailwind CSS]
-  - Backend: [Springboot + maven]
+  - Backend: [Springboot + maven , lombok , flyway ,mapper]
   - Database: [MySQL]
   - Auth: [JWT / OAuth / Role-based access RBAC]
   - Deployment: [Docker + Vercel (frontend) + Docker + AWS (backend)]
@@ -98,8 +98,8 @@
     d- [x] Lesson management screens
     e- [x] Activity components (All 8 types complete: Text, Quiz, PDF, Audio, Video, Book, Interactive, Homework)
 13- [x] Build student learning interface (attractive and stylish)
-14- [x] Implement CSS styling and full responsive design
-15- [x] Add advanced interactivity and animations
+14- [x] Implement CSS styling and full responsive design (Polish mobile views)
+15- [x] Add advanced interactivity and animations and transitions
 16- [x] Create all CRUD pages for management
 17- [x] Add mobile-optimized views
 
@@ -116,13 +116,13 @@
 ---
 
 ### Phase 6: Deployment
-1- [] Write Dockerfile for backend
-2- [] Write docker-compose for local dev
-3- [] Setup CI/CD pipeline (Bitbucket CI)
-4- [] Configure domain and SSL
-5- [] Choose hosting platform
-6- [] Deploy backend to [AWS]
-7- [] Deploy frontend to [Vercel]
+1- [x] Write Dockerfile for backend
+2- [x] Write docker-compose for local dev
+3- [x] Setup CI/CD pipeline (Bitbucket CI)
+4- [partial] Configure domain and SSL (Documentation provided)
+5- [x] Choose hosting platform (AWS for backend, Vercel for frontend)
+6- [partial] Deploy backend to [AWS] (Configuration ready, deployment pending)
+7- [partial] Deploy frontend to [Vercel] (Configuration ready, deployment pending)
 
 ---
 
