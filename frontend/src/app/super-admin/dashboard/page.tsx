@@ -17,7 +17,7 @@ export default function SuperAdminDashboard() {
     if (!auth.isAuthenticated()) {
       router.push('/login');
       return;
-    }
+    } 
 
     if (!auth.hasRole('SUPER_ADMIN')) {
       router.push('/');
