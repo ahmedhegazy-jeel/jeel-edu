@@ -16,6 +16,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Kids Learn Hub — Where Learning Meets Fun</title>               
+          {/*body { font-family: Inter, system-ui, sans-serif; }
+          //h1,h2,h3,h4,h5,h6 { font-family: Poppins, sans-serif; }
+          */}        
+      </head>
       <body className={`${inter.variable} font-sans antialiased`}>{children}</body>
     </html>
   );

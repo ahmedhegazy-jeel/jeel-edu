@@ -94,8 +94,9 @@ export default function CurriculumDetailPage({ params }: { params: { id: string 
                   ← Back
                 </Link>
                 <h1 className="text-3xl font-bold text-gray-900">
-                  {curriculum.icon} {curriculum.name}
+                  {curriculum.icon} {curriculum.name} 
                 </h1>
+                
               </div>
               <div className="mt-2 flex items-center space-x-4">
                 <span
