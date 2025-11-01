@@ -9,9 +9,11 @@ export default function Navbar() {
   const router = useRouter();
   const [user, setUser] = useState<any>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isLanding, setIsLanding] = useState(false);
 
   useEffect(() => {
     setUser(auth.getCurrentUser());
+    setIsLanding(window.location.pathname === '/');
   }, []);
 
   const handleLogout = async () => {
@@ -23,6 +25,7 @@ export default function Navbar() {
     if (!user) return '/';
     
     const role = user.role;
+
     if (role.includes('STUDENT')) return '/student/dashboard';
     if (role.includes('TEACHER')) return '/teacher/dashboard';
     if (role.includes('PARENT')) return '/parent/dashboard';
@@ -31,6 +34,16 @@ export default function Navbar() {
     return '/';
   };
 
+  const GetLandingLinks = ()=>{
+    return (
+      <>
+      {isLanding && (
+        <></>
+      )}
+      </>
+    );
+  }
+
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,9 +51,6 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href={getDashboardLink()} className="flex-shrink-0 flex items-center">
-              <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-                JeelEducation
-              </span>
             </Link>
           </div>
 
@@ -48,7 +58,8 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-4">
             {user ? (
               <>
-                <span className="text-gray-700 hidden lg:inline">
+                <GetLandingLinks/>
+                <span className="text-blue-700 font-bold hidden lg:inline">
                   {user.firstName} {user.lastName}
                 </span>
                 <span className="text-xs px-2 py-1 bg-primary-100 text-primary-800 rounded-full">
@@ -63,10 +74,10 @@ export default function Navbar() {
               </>
             ) : (
               <>
-                <Link
-                  href="/login"
-                  className="px-4 py-2 text-sm font-medium text-primary-600 hover:text-primary-700"
-                >
+                <GetLandingLinks/>
+
+                <Link href="/login" className="hidden px-4 py-2 border rounded-lg hover:bg-blue-600 hover:text-white transition">Login2</Link>
+                <Link href="/login" className="px-4 py-2 text-sm font-medium text-primary-600 hover:text-primary-700">
                   Login
                 </Link>
                 <Link

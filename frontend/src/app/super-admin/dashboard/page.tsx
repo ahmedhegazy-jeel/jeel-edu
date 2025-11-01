@@ -69,13 +69,13 @@ export default function SuperAdminDashboard() {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
 
-      <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+      <div className="bg-[#b273f1] max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 rounded-lg">
         {/* Header */}
         <div className="px-4 py-6 sm:px-0">
           <h1 className="text-3xl font-bold text-gray-900">
             Super Admin Dashboard 👑
           </h1>
-          <p className="mt-2 text-gray-600">System-wide overview and management</p>
+          <p className="mt-2 text-white font-bold">System-wide overview and management</p>
         </div>
 
         {/* Main Stats Grid */}

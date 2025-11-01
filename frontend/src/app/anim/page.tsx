@@ -1,71 +1,24 @@
-'use client';
-import styles from "./page.module.scss";
+'use client'
 
-import {useLayoutEffect, useRef, useState} from "react";
-import { Flip } from "gsap/dist/Flip"
-import { gsap } from "gsap"
-import {useGSAP} from "@gsap/react";
+import  MotionImage  from "./motion/m1/page";
 
-gsap.registerPlugin(Flip);
-
-const Home = () =>{
-
-    const container = useRef(null);
-    const q = gsap.utils.selector(container);
-
-    const titleRef  = useRef(null);
-    const buttonRef = useRef(null);
-
-    const [layout, setLayout] = useState();
-
-    useGSAP(() => {
-            if (!layout) return;
-
-            Flip.from(layout, {
-                duration: 2,
-                ease: "power1.inOut",
-                absolute: true
-            });
-        },{dependencies: [layout]}
-    );
-
-    const handleClick = ()=>{
-        // @ts-ignore
-        setLayout(Flip.getState(titleRef.current));
-        // @ts-ignore
-        titleRef.current.classList.remove('after');
-        // @ts-ignore
-        titleRef.current.classList.add('before');
-    };
-
-
-
-    return (
-        <main className={'main'} ref={container}>
-
-            <div className={'after title'} ref={titleRef} onClick={handleClick}>
-
-                <div id={'one'}>
-                    <h1 className={'heroText'} id={'ti'} >
-                        TI
-                    </h1>
-                </div>
-
-                <div id={'two'}>
-                    <h1 className={'heroText'} id={'g'} >
-                        G
-                    </h1 >
-                </div>
-
-                <div id={'three'}>
-                    <h1 className={'heroText'} id={'a'}>
-                        A
-                    </h1>
-                </div>
-
-            </div>
-        </main>
-    )
+export default function Home() {
+  return (
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <div className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+        <MotionImage
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="dark:invert"
+          //src="/next.svg"
+          src="/images/kid.png"
+          alt="Next.js logo"
+          width={180}
+          height={38}
+          priority
+        />
+        </div>      
+    </div>
+  );
 }
-
-export default Home;

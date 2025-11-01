@@ -110,6 +110,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 
 
 

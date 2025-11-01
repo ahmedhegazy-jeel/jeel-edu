@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import LayoutWrapper from './LayoutWrapper';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
@@ -24,7 +25,11 @@ export default function RootLayout({
           //h1,h2,h3,h4,h5,h6 { font-family: Poppins, sans-serif; }
           */}        
       </head>
-      <body className={`${inter.variable} font-sans antialiased`}>{children}</body>
+      <body className={`${inter.variable} font-sans antialiased min-h-screen`}>
+          <LayoutWrapper>
+            {children}
+          </LayoutWrapper>
+      </body>
     </html>
   );
 }

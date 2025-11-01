@@ -16,15 +16,16 @@ export function middleware(request: NextRequest) {
 
   // If logged in and trying to access login/register, redirect to dashboard
   if (accessToken && (pathname === '/login' || pathname === '/register')) {
-    return NextResponse.redirect(new URL('/dashboard', request.url));
+    return NextResponse.redirect(new URL('/', request.url));
   }
 
-  return NextResponse.next();
+  return NextResponse.next(); 
 }
 
 export const config = {
   matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
+    //'/((?!api|_next/static|_next/image|favicon.ico).*)',
+  '/((?!api|_next/static|_next/image|images|favicon.ico|logo.png|hero_bg_with_char.png).*)',
   ],
 };
 

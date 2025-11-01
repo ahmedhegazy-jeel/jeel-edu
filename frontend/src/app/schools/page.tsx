@@ -80,13 +80,13 @@ export default function SchoolsPage() {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
 
-      <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+      <div className="bg-[#c9e0d0] max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 rounded-lg">
         {/* Header */}
         <div className="px-4 py-6 sm:px-0">
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-3xl font-bold text-gray-900">Schools Management 🏫</h1>
-              <p className="mt-2 text-gray-600">Manage all schools in the system</p>
+              <p className="mt-2 text-white font-bold">Manage all schools in the system</p>
             </div>
             <Link
               href="/schools/create"
