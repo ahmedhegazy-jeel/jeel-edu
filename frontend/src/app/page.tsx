@@ -67,10 +67,10 @@ export default function LandingPage() {
         {/* Hero Slider */}
         <HeroSlider 
                 images={[
-                  { src: '/images/hero_bg_with_char.png', alt: 'Background', overlayColor: '#000000' },
-                  { src: '/images/hero_bg_with_char.png', alt: 'Background', overlayColor: '#000000' }, 
-                  { src: '/images/hero_bg_with_char.png', alt: 'Background', overlayColor: '#000000' },
-                  { src: '/images/hero_bg_with_char.png', alt: 'Background', overlayColor: '#000000' }  
+                  { src: '/images/hero_bg_with_char.png', alt: 'Background', overlayColor: '#000000' },             
+                  { src: '/images/hero_bg_with_char2.png', alt: 'Background', overlayColor: '#000000' },
+                  { src: '/images/hero_bg_with_char3.png', alt: 'Background', overlayColor: '#000000' },  
+                  { src: '/images/hero_bg_with_char4.png', alt: 'Background', overlayColor: '#000000' },
                 ]}
                 duration={4}
         />

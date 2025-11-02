@@ -124,6 +124,8 @@ public class SecurityConfig {
                         .requestMatchers("/public/**").permitAll()
                         .requestMatchers("/actuator/health").permitAll()
                         .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
+                        .requestMatchers("/student/minimax/**").permitAll()
+                        .requestMatchers("/api/student/minimax/**").permitAll()
                         // Role-based access for specific paths
                         .requestMatchers("/admin/**").hasAnyRole("SUPER_ADMIN", "SCHOOL_ADMIN")
                         .requestMatchers("/super-admin/**").hasRole("SUPER_ADMIN")

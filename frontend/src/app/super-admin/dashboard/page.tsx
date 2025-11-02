@@ -11,7 +11,7 @@ export default function SuperAdminDashboard() {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [systemStats, setSystemStats] = useState<any>(null);
-  const [topPerformers, setTopPerformers] = useState<any[]>([]);
+  const [topPerformers, setTopPerformers] = useState<any[]>([]); 
 
   useEffect(() => {
     if (!auth.isAuthenticated()) {

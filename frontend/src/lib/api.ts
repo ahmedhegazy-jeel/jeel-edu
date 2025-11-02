@@ -158,3 +158,35 @@ export const adminAPI = {
   getCurriculumLeaderboard: (curriculumId: number, limit: number = 10) =>api.get(`/admin-panel/curriculum/${curriculumId}/leaderboard?limit=${limit}`),
 };
 
+// ======================================================================
+// MiniMax :
+export const studentAPI2 = {
+  getStudentProfile: (studentId: number) => api.get(`/student/minimax/profile/${studentId}`),
+  getCurriculums: (schoolId: number) => api.get(`/student/minimax/curriculums?schoolId=${schoolId}`),
+  getUnits: (curriculumId: number) => api.get(`/student/minimax/units/${curriculumId}`),
+  getLessonPath: (unitId: number) => api.get(`/student/minimax/lesson-path/${unitId}`),
+  getLessonPath2: (unitId: number) => api.get(`/api/student/minimax/lesson-path/${unitId}`),
+  updateProgress: (request: any) => api.post(`/student/minimax/progress/update`, request),
+  getLessonContent: (lessonId: number) => api.get(`/student/minimax/lesson-content/${lessonId}`),
+  //getActivities: (lessonId: number) => api.get(`/student/minimax/activities/${lessonId}`),
+  //getQuizzes: (lessonId: number) => api.get(`/student/minimax/quizzes/${lessonId}`),
+  //getHomeworks: (lessonId: number) => api.get(`/student/minimax/homeworks/${lessonId}`),
+}
+/*
+export const curriculumAPI2 = {
+  getAll: () => api.get('/minimax/curriculums'),  ///api/student/minimax 
+  getById: (id: number) => api.get(`/curriculums/${id}`),  
+  getByStatus: (status: string) => api.get(`/curriculums/status/${status}`),  
+  create: (data: any) => api.post('/curriculums', data),  
+  update: (id: number, data: any) => api.put(`/curriculums/${id}`, data),  
+  delete: (id: number) => api.delete(`/curriculums/${id}`),  
+  search: (searchTerm: string) => api.get(`/curriculums/search?searchTerm=${searchTerm}`),
+};
+
+export const unitAPI2 = {
+  getByCurriculum: (curriculumId: number) =>api.get(`/units/curriculum/${curriculumId}`),  
+  getById: (id: number) => api.get(`/units/${id}`),  
+  create: (data: any) => api.post('/units', data),  
+  update: (id: number, data: any) => api.put(`/units/${id}`, data),  
+  delete: (id: number) => api.delete(`/units/${id}`),
+};*/
