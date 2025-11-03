@@ -174,7 +174,7 @@ export default function LandingPage() {
           className="text-3xl font-bold mb-10 text-gray-800"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          //viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
           Empowering Everyone in the Learning Journey
@@ -192,7 +192,7 @@ export default function LandingPage() {
               className="bg-gradient-to-r from-[#A960EF] to-purple-800 rounded-xl shadow-lg p-6 overflow-hidden"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              //viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ 
                 scale: 1.05,
@@ -221,7 +221,7 @@ export default function LandingPage() {
           className="bg-[#836F95] bg-purple-400 !border-none !text-[#004956] !rounded-full px-4 py-2 inline-flex items-center gap-2 !text-sm font-medium mb-4"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          //viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >              
           <svg className={''} width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -238,7 +238,7 @@ export default function LandingPage() {
               className="order-2 lg:order-2"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              //viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
               <div className="space-y-6">
@@ -259,7 +259,7 @@ export default function LandingPage() {
               className="order-1 lg:order-1"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              //viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
               <div className="grid grid-cols-2 gap-6">
